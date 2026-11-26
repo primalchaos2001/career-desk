@@ -1,0 +1,82 @@
+# Role pack: Product Manager
+# Sourced from reputable PM guides: focus on user/business outcomes, user research/experimentation, and cross-functional alignment.
+pack: role/product-manager
+kind: role
+name: Product Manager
+version: "0.1.0"
+rules:
+  - id: pm-outcome-metrics
+    title: Quantify your product outcomes using user and business metrics
+    priority: P0
+    check: quantify-business-impact
+    params:
+      minRatio: 0.3
+    why: >-
+      Product Managers are evaluated on their ability to drive business and user outcomes (e.g. conversion rates, retention, DAU/MAU, user growth) rather than just listing shipped features or tasks.
+    source:
+      url: https://www.tryexponent.com/blog/product-manager-resume
+      note: Exponent highlights that PM resumes must treat accomplishments as products and measure outcomes using user/business metrics rather than listing responsibilities.
+
+  - id: pm-user-evidence
+    title: Demonstrate user research, interviews, or experimentation
+    priority: P1
+    check: highlights-keywords-missing
+    params:
+      anyOf:
+        - "user research"
+        - "user interviews"
+        - "A/B testing"
+        - "A/B test"
+        - "experiment"
+        - "experiments"
+        - "usability testing"
+        - "usability test"
+        - "personas"
+        - "telemetry"
+      label: "user research or experimentation"
+    why: >-
+      Strong product managers ground their decisions in customer insight and data. Evidence of user interviews, usability testing, A/B testing, or data experiments proves user empathy and structured product discovery.
+    source:
+      url: https://www.lennysnewsletter.com/p/pm-resumes
+      note: Lenny's Newsletter emphasizes that demonstrating customer empathy and data-informed decision-making (e.g. A/B testing, user research) is key to standing out as a PM.
+
+  - id: pm-cross-functional-scope
+    title: Showcase cross-functional collaboration and stakeholder alignment
+    priority: P1
+    check: highlights-keywords-missing
+    params:
+      anyOf:
+        - "cross-functional"
+        - "cross functional"
+        - "stakeholders"
+        - "stakeholder alignment"
+        - "stakeholder management"
+        - "alignment"
+        - "collaborated with"
+        - "partnered with"
+        - "engineers"
+        - "designers"
+        - "marketers"
+        - "developers"
+      label: "cross-functional coordination"
+    why: >-
+      Product management is inherently collaborative and requires leading without authority. Describing collaboration across engineering, design, marketing, or business teams is critical.
+    source:
+      url: https://www.tryexponent.com/blog/product-manager-resume
+      note: PMs operate at the intersection of business, design, and engineering, and must show clear evidence of driving cross-functional alignment.
+
+overrides:
+  stu-quantify:
+    disabled: true
+
+# Recruiter-search keywords for the findability score (D-039).
+# Source: PM Resume Guides / tracking ledger: 9 instances
+searchKeywords:
+  - term: "product management"
+    aliases: ["product manager", "product owner", "roadmap", "PRD", "product specifications", "product lifecycle"]
+  - term: "user research"
+    aliases: ["user interviews", "usability testing", "user feedback", "personas", "telemetry", "customer research"]
+  - term: "metrics & analytics"
+    aliases: ["A/B testing", "experimentation", "retention", "conversion", "DAU", "MAU", "NPS", "SQL", "Mixpanel", "Amplitude", "Google Analytics"]
+  - term: "cross-functional coordination"
+    aliases: ["cross-functional", "stakeholder management", "engineering alignment", "agile", "scrum", "product launch", "GTM"]

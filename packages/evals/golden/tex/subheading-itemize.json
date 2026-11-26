@@ -1,0 +1,131 @@
+{
+  "basics": {
+    "name": "Jordan Rivera",
+    "email": "jordan@example.com",
+    "phone": "+1-555-0100",
+    "profiles": [
+      {
+        "network": "LinkedIn",
+        "url": "https://linkedin.com/in/jordanrivera"
+      }
+    ]
+  },
+  "work": [
+    {
+      "name": "Acme Silicon",
+      "position": "Design & Verification Engineer",
+      "location": "Bengaluru, India",
+      "startDate": "2025-07",
+      "highlights": [
+        "Designed SystemVerilog RTL modules for AI accelerator architectures.",
+        "Optimized RTL for area and power, achieving up to a 5 gate-count reduction.",
+        "Developed UVM verification environments and automated regression with Python."
+      ]
+    }
+  ],
+  "education": [
+    {
+      "institution": "State University",
+      "area": "Electronics Engineering",
+      "studyType": "M.Tech.",
+      "startDate": "2023",
+      "endDate": "2025",
+      "courses": [],
+      "gpa": {
+        "value": 8.73,
+        "scale": 10
+      },
+      "coursework": []
+    },
+    {
+      "institution": "City Institute of Technology",
+      "area": "Electronics Engineering",
+      "studyType": "B.Tech.",
+      "startDate": "2019",
+      "endDate": "2023",
+      "courses": [],
+      "gpa": {
+        "value": 8.75,
+        "scale": 10
+      },
+      "coursework": []
+    }
+  ],
+  "skills": [
+    {
+      "name": "Languages",
+      "keywords": ["SystemVerilog", "Verilog", "VHDL", "Python", "C++"]
+    },
+    {
+      "name": "Protocols",
+      "keywords": ["AXI4", "AXI5", "APB", "SPI", "I3C"]
+    },
+    {
+      "name": "Verification",
+      "keywords": ["UVM", "SystemVerilog Testbenches", "Assertions"]
+    }
+  ],
+  "projects": [
+    {
+      "name": "FPGA Ultrasound Beamforming",
+      "highlights": [
+        "Implemented a Delay-and-Sum beamforming accelerator in VHDL.",
+        "Integrated AXI DMA on a Zynq UltraScale+ platform."
+      ],
+      "keywords": [],
+      "roles": []
+    },
+    {
+      "name": "Race Prediction Engine",
+      "highlights": ["Built an ensemble machine-learning pipeline for race-outcome prediction."],
+      "keywords": [],
+      "roles": []
+    }
+  ],
+  "awards": [],
+  "certificates": [],
+  "languages": [],
+  "meta": {
+    "sourceFormat": "tex",
+    "texSourceMap": [
+      {
+        "section": "basics",
+        "startLine": 22,
+        "endLine": 30
+      },
+      {
+        "section": "work",
+        "startLine": 31,
+        "endLine": 42
+      },
+      {
+        "section": "skills",
+        "startLine": 43,
+        "endLine": 50
+      },
+      {
+        "section": "projects",
+        "startLine": 51,
+        "endLine": 65
+      },
+      {
+        "section": "education",
+        "startLine": 66,
+        "endLine": 75
+      },
+      {
+        "section": "interests",
+        "startLine": 76,
+        "endLine": 81
+      }
+    ],
+    "regionSignals": {
+      "hasPhoto": false,
+      "hasDateOfBirth": false,
+      "hasMaritalStatus": false,
+      "hasNationality": false,
+      "hasDeclarationLine": false,
+      "spellingVariant": "en-US"
+    }
+  }
+}

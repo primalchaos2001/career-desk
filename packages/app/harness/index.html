@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>CV Guide — pipeline harness</title>
+    <style>
+      body { font: 15px/1.5 system-ui, sans-serif; max-width: 46rem; margin: 2rem auto; padding: 0 1rem; }
+      .finding { border-left: 3px solid #999; padding: .5rem .75rem; margin: .5rem 0; background: #f6f6f6; }
+      .finding[data-priority="P0"] { border-color: #c0392b; }
+      .finding[data-priority="P1"] { border-color: #d68910; }
+      .evidence { font-family: ui-monospace, monospace; font-size: .85em; color: #444; }
+      .layer, .source { font-size: .75em; color: #666; }
+      #status { font-weight: 600; }
+      #not-vite { border: 2px solid #c0392b; background: #fdecea; padding: 1rem; border-radius: 6px; }
+      #not-vite pre { background: #fff; padding: .5rem; }
+    </style>
+  </head>
+  <body>
+    <h1>CV Guide — pipeline harness</h1>
+    <p>Real analysis pipeline, running entirely in this browser tab. No server.</p>
+    <p>
+      <label>Region
+        <select id="region">
+          <option value="us">us</option>
+          <option value="india">india</option>
+          <option value="uk">uk</option>
+          <option value="de">de</option>
+        </select>
+      </label>
+      <input type="file" id="file" accept=".pdf,.tex" />
+    </p>
+    <div id="not-vite" hidden>
+      <h2>⚠ This page must be served by Vite</h2>
+      <p>
+        You opened <code>index.html</code> directly (e.g. VS Code Live Server).
+        This page loads TypeScript modules and a Web Worker, which a plain
+        static file server cannot transform — so nothing happens.
+      </p>
+      <p>From the repo root, run:</p>
+      <pre>pnpm dev</pre>
+      <p>then open the URL it prints (<code>http://localhost:5173</code>).</p>
+    </div>
+    <p id="status" data-state="idle">idle</p>
+    <p id="scores"></p>
+    <div id="output"></div>
+    <p id="notes"></p>
+    <script type="module" src="/harness/main.ts"></script>
+    <script>
+      // If Vite served this page, main.ts marks the body ready. Otherwise the
+      // module never executed (raw .ts can't run in a browser) — say so loudly
+      // instead of sitting on "idle" forever.
+      setTimeout(() => {
+        if (!document.body.dataset.ready) {
+          document.getElementById("not-vite").hidden = false;
+          document.getElementById("status").textContent = "not served by Vite — see above";
+        }
+      }, 1500);
+    </script>
+  </body>
+</html>

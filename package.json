@@ -1,0 +1,29 @@
+{
+  "name": "career-desk",
+  "private": true,
+  "version": "0.0.0",
+  "description": "Career Desk: a local-first job-search workspace that works with your own AI assistant (Codex, Claude, Antigravity). Includes the TailorATS CV checker.",
+  "license": "MIT",
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "packageManager": "pnpm@11.10.0",
+  "scripts": {
+    "dev": "pnpm --filter @tailorats/app run dev",
+    "lint": "biome check .",
+    "format": "biome format --write .",
+    "typecheck": "pnpm -r --if-present run typecheck",
+    "test": "vitest run",
+    "eval": "pnpm --filter @tailorats/evals run eval",
+    "analyze": "pnpm --filter @tailorats/pipeline run analyze",
+    "e2e": "pnpm --filter @tailorats/app run e2e",
+    "e2e:preview": "E2E_PREVIEW=1 pnpm --filter @tailorats/app run e2e",
+    "build": "pnpm --filter @tailorats/app run build && node scripts/package-static.mjs"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^2.0.0",
+    "typescript": "^5.8.0",
+    "vitest": "^3.0.0"
+  }
+}

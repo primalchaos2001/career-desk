@@ -1,0 +1,61 @@
+# Role pack: Financial Analyst
+# Analytical finance role expecting strong spreadsheet, valuation, and certification credentials.
+pack: role/finance-analyst
+kind: role
+name: Financial Analyst
+version: "0.1.0"
+rules:
+  - id: fa-gpa-required
+    title: Add your GPA (essential for finance recruiting screens)
+    priority: P0
+    check: gpa-missing
+    why: >-
+      Finance recruiters use academic GPA as a primary filtering metric for internships and
+      new-grad entry roles. Omitting it completely is a red flag.
+    source:
+      url: https://corporatefinanceinstitute.com/resources/career-map/resume/financial-analyst-resume/
+      note: GPA is a mandatory field for entry-level financial analyst resumes
+
+  - id: fa-excel-modeling-required
+    title: Highlight Advanced Excel or Financial Modeling skills
+    priority: P0
+    check: skills-keywords-missing
+    params:
+      anyOf: ["excel", "modeling", "valuation", "dcf", "lbo"]
+      match: substring
+      label: "Excel or financial modeling"
+    why: >-
+      Practical finance relies on spreadsheets and models; you must explicitly list Excel,
+      financial modeling, valuation, or DCF in your skills to pass screening keyword checks.
+    source:
+      url: https://corporatefinanceinstitute.com/resources/career-map/resume/financial-analyst-resume/
+      note: Excel and modeling are core technical requirements
+
+  - id: fa-certifications-recommended
+    title: Mention relevant finance certifications (e.g., CFA, Bloomberg)
+    priority: P2
+    check: certifications-missing
+    params:
+      orSkillKeywords: ["cfa", "bloomberg", "cfi", "fmpa", "nism", "ncfm"]
+    why: >-
+      Finance certifications like CFA Level I or Bloomberg Terminal certifications show
+      industry knowledge and self-directed preparation.
+    source:
+      url: https://corporatefinanceinstitute.com/resources/career-map/resume/financial-analyst-resume/
+      note: Certifications showcase dedication and baseline technical skills
+
+# Recruiter-search keywords for the findability score (D-039).
+# Source: CFI Financial Analyst Guides / tracking ledger: 10 instances
+searchKeywords:
+  - term: "corporate finance"
+    aliases: ["financial planning", "forecasting", "budgeting", "fp&a"]
+  - term: "Excel"
+    aliases: ["spreadsheets", "financial modeling", "vlookup", "pivot tables"]
+  - term: "accounting"
+    aliases: ["gaap", "general ledger", "reconciliations"]
+  - term: "SQL"
+    aliases: ["query", "database", "databases"]
+  - term: "financial analysis"
+    aliases: ["variance analysis", "cost analysis", "ratio analysis"]
+  - term: "Tableau"
+    aliases: ["dashboarding", "data visualization", "visualization", "reporting"]

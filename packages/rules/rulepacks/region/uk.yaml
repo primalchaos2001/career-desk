@@ -1,0 +1,70 @@
+# Region pack: United Kingdom
+# Sources gathered in docs/RESEARCH.md §4.
+pack: region/uk
+kind: region
+name: United Kingdom
+version: "0.1.0"
+rules:
+  - id: uk-no-photo
+    title: Remove the photo — UK CVs never include one
+    priority: P0
+    check: has-photo
+    why: >-
+      UK employers exclude CVs with photos to prevent discrimination bias under
+      the Equality Act; a photo can lead to rejection before review.
+    source:
+      url: https://www.topcv.io/blog/resume-vs-cv-differences-by-country-2026
+      note: UK section — photos discouraged due to discrimination legislation
+    suggestion:
+      before: Photo in header
+      after: No photo
+
+  - id: uk-no-personal-details
+    title: Remove date of birth / marital status / nationality
+    priority: P0
+    check: has-personal-details
+    why: >-
+      Protected personal characteristics (age, marital status, nationality) are omitted
+      from UK CVs to prevent bias and ensure compliance with UK anti-discrimination laws.
+    source:
+      url: https://nationalcareers.service.gov.uk/careers-advice/cv-sections
+      note: Avoid including personal information like age, date of birth, marital status, or nationality.
+
+  - id: uk-page-count
+    title: Keep it under two pages
+    priority: P1
+    check: page-count-exceeds
+    params: { max: 2 }
+    why: >-
+      UK early-career CVs are expected to be at most two pages long; going over two pages
+      dilutes your key details and violates standard recruiters' expectations.
+    source:
+      url: https://www.topcv.io/blog/resume-vs-cv-differences-by-country-2026
+      note: UK standard CV length for early career is up to 2 pages.
+
+  - id: uk-spelling
+    title: Use British English spelling consistently
+    priority: P2
+    check: spelling-variant-mismatch
+    params: { expected: en-GB }
+    why: >-
+      UK applications must use British English spelling (e.g., "optimise", "colour")
+      to show localization and consistency.
+    source:
+      url: https://resume.io/blog/international-resume-cv-writing
+      note: match spelling conventions to the target country (en-GB for the UK)
+
+  - id: uk-no-declaration
+    title: Remove the declaration line
+    priority: P2
+    check: has-declaration-line
+    why: >-
+      Declaration lines are a regional South Asian convention; in the UK they are not used
+      and waste valuable space.
+    source:
+      url: https://www.careeraddict.com/resume-differences-country-to-country
+      note: declaration lines are not used in UK CVs
+overrides:
+  # US professional-registration advice; not applicable outside the US (D-044)
+  ee-fe-eit-recommended:
+    disabled: true

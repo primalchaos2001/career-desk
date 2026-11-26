@@ -1,0 +1,65 @@
+{
+  "basics": {
+    "name": "Lukas Weber",
+    "email": "lukas@example.de",
+    "profiles": []
+  },
+  "work": [
+    {
+      "name": "Berlin Analytics",
+      "position": "Data Analyst Intern",
+      "startDate": "2025-03",
+      "endDate": "2025-08",
+      "highlights": [
+        "Optimised SQL queries on PostgreSQL database, reducing report load times by 45% (saving 4 hours/week)",
+        "Designed 6 interactive Tableau dashboards, increasing stakeholder dashboard adoption rate by 50%",
+        "Analysed marketing campaign data, identifying a 15% drop-off in user onboarding funnel and proposing fixes"
+      ]
+    }
+  ],
+  "education": [
+    {
+      "institution": "TU Berlin",
+      "area": "Information Systems",
+      "studyType": "B.Sc.",
+      "startDate": "2022-10",
+      "endDate": "2025-09",
+      "gpa": {
+        "value": 1.7,
+        "scale": 1
+      },
+      "coursework": ["Database Systems", "Business Intelligence"]
+    }
+  ],
+  "skills": [
+    {
+      "name": "Databases & Tools",
+      "keywords": ["SQL", "PostgreSQL", "Tableau", "Power BI", "Python"]
+    }
+  ],
+  "projects": [
+    {
+      "name": "Customer Segmentation Engine",
+      "description": "K-Means clustering on retail transaction data",
+      "highlights": [
+        "Segmented 50,000+ customers into 5 distinct behavioral profiles using scikit-learn in Python",
+        "Visualised clusters in Tableau and presented findings to senior management"
+      ]
+    }
+  ],
+  "awards": [],
+  "certificates": [],
+  "languages": [],
+  "meta": {
+    "sourceFormat": "builder",
+    "regionSignals": {
+      "hasPhoto": false,
+      "hasDateOfBirth": false,
+      "hasMaritalStatus": false,
+      "hasNationality": false,
+      "hasDeclarationLine": false,
+      "spellingVariant": "en-GB",
+      "pageCount": 1
+    }
+  }
+}

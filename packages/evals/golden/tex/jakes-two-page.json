@@ -1,0 +1,118 @@
+{
+  "basics": {
+    "name": "Avery Chen",
+    "email": "student@example.edu",
+    "profiles": [
+      {
+        "network": "LinkedIn",
+        "url": "https://linkedin.com/in/student"
+      },
+      {
+        "network": "GitHub",
+        "url": "https://github.com/student"
+      }
+    ]
+  },
+  "work": [
+    {
+      "name": "Example Company",
+      "position": "Software Engineer Intern",
+      "location": "Location",
+      "startDate": "2024-06",
+      "endDate": "2024-08",
+      "highlights": ["Developed a backend feature using Python and Django."]
+    },
+    {
+      "name": "Second Example Company",
+      "position": "Research Intern",
+      "location": "Location",
+      "startDate": "2023-06",
+      "endDate": "2023-08",
+      "highlights": ["Analyzed large datasets and built machine learning models."]
+    }
+  ],
+  "education": [
+    {
+      "institution": "Example University",
+      "area": "Computer Science",
+      "studyType": "Bachelor of Science",
+      "startDate": "2022-08",
+      "endDate": "2026-05",
+      "coursework": []
+    }
+  ],
+  "skills": [
+    {
+      "name": "Languages",
+      "keywords": ["Python", "TypeScript", "Java", "C++"]
+    },
+    {
+      "name": "Frameworks",
+      "keywords": ["React", "Node.js", "Django"]
+    }
+  ],
+  "projects": [
+    {
+      "name": "coursescheduler",
+      "highlights": ["Cut schedule generation from 40s to 2s with memoized backtracking."],
+      "keywords": ["Python", "TypeScript", "Git"],
+      "startDate": "2024-08",
+      "endDate": "2024-08"
+    },
+    {
+      "name": "dataviz-dashboard",
+      "highlights": ["Created a custom dashboard visualizing real-time metrics."],
+      "keywords": ["React", "D3.js"],
+      "startDate": "2024-01",
+      "endDate": "2024-01"
+    },
+    {
+      "name": "minidb",
+      "highlights": ["Designed a lightweight relational database engine from scratch."],
+      "keywords": ["C++", "SQLite"],
+      "startDate": "2023-10",
+      "endDate": "2023-10"
+    }
+  ],
+  "awards": [],
+  "certificates": [],
+  "languages": [],
+  "meta": {
+    "sourceFormat": "tex",
+    "texSourceMap": [
+      {
+        "section": "basics",
+        "startLine": 18,
+        "endLine": 24
+      },
+      {
+        "section": "education",
+        "startLine": 25,
+        "endLine": 31
+      },
+      {
+        "section": "work",
+        "startLine": 32,
+        "endLine": 47
+      },
+      {
+        "section": "projects",
+        "startLine": 48,
+        "endLine": 66
+      },
+      {
+        "section": "skills",
+        "startLine": 67,
+        "endLine": 74
+      }
+    ],
+    "regionSignals": {
+      "hasPhoto": false,
+      "hasDateOfBirth": false,
+      "hasMaritalStatus": false,
+      "hasNationality": false,
+      "hasDeclarationLine": false,
+      "spellingVariant": "en-US"
+    }
+  }
+}

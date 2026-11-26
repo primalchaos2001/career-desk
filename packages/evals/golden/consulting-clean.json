@@ -1,0 +1,71 @@
+{
+  "basics": {
+    "name": "David Miller",
+    "email": "consultant@example.edu",
+    "profiles": [
+      {
+        "network": "GitHub",
+        "url": "https://github.com/consultant"
+      }
+    ]
+  },
+  "work": [
+    {
+      "name": "Boutique Advising",
+      "position": "Lead Strategy Intern",
+      "startDate": "2023-06",
+      "endDate": "2023-08",
+      "highlights": [
+        "Analyzed market size of $45M for new product entry strategy",
+        "Recommended 4 cost-saving initiatives to increase margin by 12%"
+      ]
+    }
+  ],
+  "education": [
+    {
+      "institution": "Elite University",
+      "area": "Economics",
+      "studyType": "B.A.",
+      "startDate": "2020-09",
+      "endDate": "2024-06",
+      "gpa": {
+        "value": 3.9,
+        "scale": 4
+      },
+      "coursework": ["Microeconomics", "Econometrics", "Corporate Finance"]
+    }
+  ],
+  "skills": [
+    {
+      "name": "Analysis",
+      "keywords": ["Excel", "Tableau", "SQL"]
+    }
+  ],
+  "projects": [
+    {
+      "name": "case-competition",
+      "description": "National consulting case competition",
+      "highlights": ["Won 1st place out of 48 teams in national strategy competition"]
+    }
+  ],
+  "awards": [
+    {
+      "title": "Dean's List Award",
+      "date": "2023"
+    }
+  ],
+  "certificates": [],
+  "languages": [],
+  "meta": {
+    "sourceFormat": "builder",
+    "regionSignals": {
+      "hasPhoto": false,
+      "hasDateOfBirth": false,
+      "hasMaritalStatus": false,
+      "hasNationality": false,
+      "hasDeclarationLine": false,
+      "spellingVariant": "en-US",
+      "pageCount": 1
+    }
+  }
+}

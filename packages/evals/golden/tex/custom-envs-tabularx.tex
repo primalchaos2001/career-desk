@@ -1,0 +1,82 @@
+%-----------------------------------------------------------------------------
+% Fixture (A-14): non-Jake's layout — custom joblong/projectentry environments,
+% tabularx header/skills/education, and section headings the lexicon must match
+% ("Key Projects", "Positions of Responsibility", "Achievements & Awards").
+% Anonymized structural twin of samples/main.tex (gitignored, personal). B-3.
+%-----------------------------------------------------------------------------
+\documentclass[a4paper,12pt]{article}
+\usepackage{tabularx}
+\usepackage{enumitem}
+\usepackage{fontawesome5}
+\usepackage[hidelinks]{hyperref}
+
+\newenvironment{joblong}[2]
+  {\begin{tabularx}{\linewidth}{@{} X r @{}}\textbf{#1} & #2 \\\end{tabularx}
+   \begin{itemize}[nosep, leftmargin=1em, label=--]}
+  {\end{itemize}}
+
+\newenvironment{projectentry}[2]
+  {\begin{tabularx}{\linewidth}{@{} X r @{}}\textbf{#1} & #2 \\\end{tabularx}
+   \begin{itemize}[nosep, leftmargin=1em, label=--]}
+  {\end{itemize}}
+
+\newcolumntype{C}{>{\centering\arraybackslash}X}
+
+\begin{document}
+
+\begin{tabularx}{\linewidth}{@{} C @{}}
+\Huge{Jordan Rivera} \\[4pt]
+\small{Design \& Verification Engineer} \\[6pt]
+\href{https://linkedin.com/in/jordanrivera}{\faLinkedin\ LinkedIn} \ $|$ \
+\href{https://github.com/jordanrivera}{\faGithub\ GitHub} \ $|$ \
+\href{https://jordanrivera.example.com/}{\faGlobe\ Portfolio} \ $|$ \
+\href{mailto:jordan@example.com}{\faEnvelope\ jordan@example.com} \\
+\end{tabularx}
+
+\section{Work Experience}
+
+\begin{joblong}{Design \& Verification Engineer | Acme Silicon}{July 2025 -- Present}
+    \item \textbf{RTL Optimization:} Reduced gate count by 5$\times$ in target modules and lowered power by 23\%.
+    \item \textbf{Accelerator Design:} Built parametric SystemVerilog modules for an NPU inference pipeline.
+\end{joblong}
+
+\begin{joblong}{Research Intern | State University}{May 2022}
+    \item Prototyped a telemedicine application with integrated health-record tracking.
+\end{joblong}
+
+\section{Technical Skills}
+\begin{tabularx}{\linewidth}{@{}l X@{}}
+\textbf{Hardware \& DV:} & SystemVerilog, VHDL, UVM, RTL Design, Logic Synthesis \\
+\textbf{Protocols:}      & AXI4, AXI5, APB, SPI, I3C \\
+\textbf{EDA Tools:}      & Cadence Xcelium, SimVision, Synopsys Design Compiler, Vivado \\
+\end{tabularx}
+
+\section{Key Projects}
+
+\begin{projectentry}{FPGA Ultrasound Imaging System}{State University \ $|$ \ 2024}
+    \item \textbf{Acceleration:} Designed a real-time processing pipeline with beamforming and envelope detection.
+    \item \textbf{Deployment:} Verified multi-channel reconstruction on a Zynq UltraScale+ MPSoC.
+\end{projectentry}
+
+\begin{projectentry}{Race Prediction Engine}{Independent \ $|$ \ 2025 -- 2026}
+    \item \textbf{Analytics:} Built a telemetry pipeline using LSTMs and XGBoost in Python.
+\end{projectentry}
+
+\section{Education}
+\begin{tabularx}{\linewidth}{@{}l X r@{}}
+2023 -- 2025 & M.Tech. in Electronics Engineering at \textbf{State University} & (CGPA: 8.73/10) \\
+2019 -- 2023 & B.Tech. in Electronics Engineering at \textbf{City Institute of Technology} & (CGPA: 8.75/10) \\
+2017 & Class 12th CBSE at \textbf{Central Public School} & (91\%) \\
+\end{tabularx}
+
+\section{Positions of Responsibility}
+\begin{tabularx}{\linewidth}{@{}l X r@{}}
+\textbf{Mentorship Lead} & Student cell, State University & 2024 \\
+\end{tabularx}
+
+\section{Achievements \& Awards}
+\begin{itemize}[nosep, leftmargin=1em]
+    \item \textbf{All India Rank 16} in a national entrance examination, 2023.
+\end{itemize}
+
+\end{document}

@@ -1,0 +1,63 @@
+{
+  "basics": {
+    "name": "Casey Vance",
+    "email": "student@example.edu",
+    "profiles": [
+      {
+        "network": "LinkedIn",
+        "url": "https://linkedin.com/in/student"
+      }
+    ]
+  },
+  "work": [
+    {
+      "name": "Acme Investment Club",
+      "position": "Analyst",
+      "startDate": "2023-09",
+      "endDate": "2024-05",
+      "highlights": ["Valued stock portfolio of $50k using discounted cash flow models"]
+    }
+  ],
+  "education": [
+    {
+      "institution": "Example University",
+      "area": "Finance",
+      "studyType": "B.B.A.",
+      "startDate": "2022-08",
+      "endDate": "2026-05",
+      "gpa": {
+        "value": 3.8,
+        "scale": 4
+      },
+      "coursework": ["Financial Accounting", "Investment Analysis"]
+    }
+  ],
+  "skills": [
+    {
+      "name": "Tools",
+      "keywords": ["Excel", "Financial Modeling"]
+    }
+  ],
+  "projects": [
+    {
+      "name": "valuation-study",
+      "description": "DCF analysis on retail sector stock",
+      "highlights": ["Projected 5-year free cash flows and estimated WACC at 8.2%"]
+    }
+  ],
+  "awards": [],
+  "certificates": [],
+  "languages": [],
+  "meta": {
+    "sourceFormat": "builder",
+    "regionSignals": {
+      "hasPhoto": false,
+      "hasDateOfBirth": false,
+      "hasMaritalStatus": false,
+      "hasNationality": false,
+      "hasDeclarationLine": false,
+      "spellingVariant": "en-US",
+      "pageCount": 1
+    }
+  }
+}

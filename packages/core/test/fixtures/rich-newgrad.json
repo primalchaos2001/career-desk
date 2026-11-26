@@ -1,0 +1,65 @@
+{
+  "basics": {
+    "name": "Jordan Lee",
+    "label": "New Grad Software Engineer",
+    "email": "jordan.lee@example.com",
+    "phone": "+1 555 010 0100",
+    "url": "https://jordanlee.example.dev",
+    "summary": "CS graduate focused on backend systems.",
+    "location": { "city": "Austin", "region": "TX", "countryCode": "US" },
+    "profiles": [
+      { "network": "GitHub", "username": "jordanlee", "url": "https://github.com/jordanlee" }
+    ]
+  },
+  "work": [
+    {
+      "name": "Example Labs",
+      "position": "SWE Intern",
+      "startDate": "2025-05",
+      "endDate": "2025-08",
+      "highlights": ["Reduced API p95 latency 40% by adding a Redis cache layer"]
+    }
+  ],
+  "education": [
+    {
+      "institution": "University of Example",
+      "area": "Computer Science",
+      "studyType": "B.S.",
+      "startDate": "2022-08",
+      "endDate": "2026-05",
+      "gpa": { "value": 3.7, "scale": 4.0 },
+      "coursework": ["Distributed Systems", "Databases", "Operating Systems"]
+    }
+  ],
+  "skills": [
+    { "name": "Languages", "keywords": ["TypeScript", "Go", "Python"] },
+    { "name": "Systems", "keywords": ["PostgreSQL", "Redis", "Docker"] }
+  ],
+  "projects": [
+    {
+      "name": "shardkv",
+      "description": "Distributed key-value store with Raft consensus",
+      "highlights": ["Handles 10k ops/s across 5 nodes in chaos tests"],
+      "keywords": ["Go", "Raft"],
+      "githubUrl": "https://github.com/jordanlee/shardkv",
+      "enrichment": {
+        "stars": 42,
+        "candidateCommits": 180,
+        "totalCommits": 195,
+        "languages": ["Go"],
+        "lastActivity": "2026-05"
+      }
+    }
+  ],
+  "awards": [{ "title": "HackTX Winner", "date": "2024-10", "awarder": "HackTX" }],
+  "certificates": [],
+  "languages": [{ "language": "English", "fluency": "Native" }],
+  "meta": {
+    "sourceFormat": "pdf",
+    "regionSignals": {
+      "hasPhoto": false,
+      "spellingVariant": "en-US",
+      "pageCount": 1
+    }
+  }
+}

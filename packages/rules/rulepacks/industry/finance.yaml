@@ -1,0 +1,59 @@
+# Industry pack: Finance
+# Culturally conservative industry expecting high academic and presentation standards.
+pack: industry/finance
+kind: industry
+name: Finance
+version: "0.1.0"
+rules:
+  - id: fin-no-photo
+    title: Remove the photo — finance resumes never include one
+    priority: P0
+    check: has-photo
+    why: >-
+      Finance and investment banking are highly conservative fields globally. Including a photo
+      is considered unprofessional and is a common reason for immediate resume rejection,
+      even in regions where photos are standard for other fields.
+    source:
+      url: https://mergersandinquisitions.com/free-investment-banking-resume-template/
+      note: Finance resumes must not include photos.
+
+  - id: fin-one-page
+    title: Limit your resume to exactly one page
+    priority: P0
+    check: page-count-exceeds
+    params:
+      max: 1
+    why: >-
+      A strict one-page limit is universal in finance and investment banking recruiting for
+      students and new graduates. Exceeding this limit is viewed as a failure of prioritization.
+    source:
+      url: https://mergersandinquisitions.com/free-investment-banking-resume-template/
+      note: Finance/IB standard template requires exactly one page.
+
+overrides:
+  stu-gpa:
+    priority: P1
+  us-one-page:
+    disabled: true
+  uk-page-count:
+    disabled: true
+  in-two-pages:
+    disabled: true
+  de-page-count:
+    disabled: true
+  us-no-photo:
+    disabled: true
+  uk-no-photo:
+    disabled: true
+
+# Recruiter-search keywords for the findability score (D-039).
+# Source: Wall Street Oasis career guides
+searchKeywords:
+  - term: "quantitative analysis"
+    aliases: ["quant", "statistics", "risk modeling", "quantitative modeling"]
+  - term: "portfolio management"
+    aliases: ["asset allocation", "investment strategy", "portfolio strategy"]
+  - term: "Bloomberg"
+    aliases: ["bloomberg terminal", "market data", "bmc"]
+  - term: "risk management"
+    aliases: ["hedging", "var", "compliance", "credit risk"]

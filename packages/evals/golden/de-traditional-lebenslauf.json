@@ -1,0 +1,56 @@
+{
+  "basics": {
+    "name": "Maximilian Schmid",
+    "email": "student@example.de",
+    "profiles": [
+      {
+        "network": "GitHub",
+        "url": "https://github.com/student"
+      }
+    ]
+  },
+  "work": [],
+  "education": [
+    {
+      "institution": "TU Munich",
+      "area": "Computer Science",
+      "studyType": "B.Sc.",
+      "startDate": "2022-10",
+      "endDate": "2025-09",
+      "gpa": {
+        "value": 1.3,
+        "scale": 5
+      },
+      "coursework": ["Software Engineering", "Databases"]
+    }
+  ],
+  "skills": [
+    {
+      "name": "Languages",
+      "keywords": ["Java", "Rust"]
+    }
+  ],
+  "projects": [
+    {
+      "name": "db-impl",
+      "description": "Database implementation",
+      "highlights": ["Implemented 2 query operators in Rust"],
+      "githubUrl": "https://github.com/student/db-impl"
+    }
+  ],
+  "awards": [],
+  "certificates": [],
+  "languages": [],
+  "meta": {
+    "sourceFormat": "builder",
+    "regionSignals": {
+      "hasPhoto": true,
+      "hasDateOfBirth": true,
+      "hasMaritalStatus": false,
+      "hasNationality": true,
+      "hasDeclarationLine": false,
+      "spellingVariant": "en-GB",
+      "pageCount": 2
+    }
+  }
+}

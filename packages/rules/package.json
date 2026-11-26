@@ -1,0 +1,27 @@
+{
+  "name": "@tailorats/rules",
+  "version": "0.0.0",
+  "private": true,
+  "license": "MIT",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts",
+    "./node": "./src/node.ts",
+    "./bundled": "./src/bundled.ts"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "build:packs": "tsx scripts/build-packs.ts"
+  },
+  "devDependencies": {
+    "@types/js-yaml": "^4.0.9",
+    "@types/node": "^26.1.0",
+    "tsx": "^4.23.0",
+    "typescript": "^5.8.0"
+  },
+  "dependencies": {
+    "@tailorats/core": "workspace:*",
+    "js-yaml": "^4.1.0",
+    "zod": "^4.0.0"
+  }
+}

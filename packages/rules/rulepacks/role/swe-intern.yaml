@@ -1,0 +1,61 @@
+# Role pack: Software Engineering intern / new-grad SWE
+# For students, projects + code links substitute for work history
+# (docs/RESEARCH.md §1 — hiring-agent weighs OSS/personal projects heavily).
+pack: role/swe-intern
+kind: role
+name: Software Engineering Intern
+version: "0.1.0"
+rules:
+  - id: swe-projects-required
+    title: Add a Projects section — it carries a student SWE resume
+    priority: P0
+    check: projects-missing
+    why: >-
+      With little work history, projects are the main evidence of engineering
+      ability; recruiter-side tools (e.g. HackerRank's hiring-agent) score
+      personal projects and open-source work directly.
+    source:
+      url: https://github.com/interviewstreet/hiring-agent
+      note: recruiter-side evaluator scores projects/OSS as primary dimensions
+
+  - id: swe-github-link
+    title: Add your GitHub profile link
+    priority: P1
+    check: github-missing
+    why: >-
+      SWE recruiters and automated evaluators look for a GitHub link to verify
+      project claims; its absence removes your cheapest credibility signal.
+    source:
+      url: https://github.com/interviewstreet/hiring-agent
+      note: GitHub enrichment is a core stage of recruiter-side evaluation
+
+  - id: swe-project-links
+    title: Link each project to its code or demo
+    priority: P2
+    check: projects-unlinked
+    why: >-
+      An unlinked project claim can't be verified; a link turns an assertion
+      into evidence.
+    source:
+      url: https://github.com/interviewstreet/hiring-agent
+      note: project verification requires repository links
+
+# Recruiter-search keywords for the findability score (D-039).
+# Source: O*NET Software Developers (15-1252.00) / tracking ledger: 34 instances
+searchKeywords:
+  - term: "data structures"
+    aliases: ["algorithms"]
+  - term: "REST API"
+    aliases: ["REST", "API", "web service"]
+  - term: "SQL"
+    aliases: ["database", "PostgreSQL", "MySQL"]
+  - term: "Git"
+    aliases: ["version control", "GitHub"]
+  - term: "unit testing"
+    aliases: ["testing", "test coverage"]
+  - term: "CI/CD"
+    aliases: ["continuous integration", "continuous deployment"]
+  - term: "Docker"
+    aliases: ["containers", "containerization"]
+  - term: "cloud"
+    aliases: ["AWS", "Azure", "GCP"]

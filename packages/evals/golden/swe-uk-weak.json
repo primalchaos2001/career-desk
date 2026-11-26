@@ -1,0 +1,71 @@
+{
+  "basics": {
+    "name": "Oliver Davies",
+    "email": "oliver@example.co.uk",
+    "profiles": [
+      {
+        "network": "GitHub",
+        "url": "https://github.com/oliver-davies"
+      }
+    ]
+  },
+  "work": [
+    {
+      "name": "Tech Corp",
+      "position": "Software Engineering Intern",
+      "startDate": "2025-06",
+      "endDate": "2025-09",
+      "highlights": [
+        "Responsible for managing and maintaining the internal web dashboard and databases, where I worked with various backend teams and helped to develop new API features while being a dedicated team player who was always focused on resolving minor styling bugs and writing documentation",
+        "Worked on testing software and assisted with debugging application errors, and also helped to write comprehensive technical reports for our client meetings, showing hard-working and results-driven attitude throughout the internship with references available on request"
+      ]
+    }
+  ],
+  "education": [
+    {
+      "institution": "University of Bristol",
+      "area": "Computer Science",
+      "studyType": "B.Sc.",
+      "startDate": "2023-09",
+      "endDate": "2026-06",
+      "gpa": {
+        "value": 3.8,
+        "scale": 4
+      },
+      "coursework": ["Data Structures", "Software Engineering Project"]
+    }
+  ],
+  "skills": [
+    {
+      "name": "Languages",
+      "keywords": ["TypeScript", "Python", "SQL"]
+    }
+  ],
+  "projects": [
+    {
+      "name": "TaskFlow",
+      "description": "Collaborative project management dashboard",
+      "highlights": [
+        "Assisted in developing a real-time messaging system using Go, and worked with the team to fix frontend bugs while maintaining a positive self-motivated mindset",
+        "Tasked with writing GitHub Actions workflows for the team and helped with fixing CI failures"
+      ],
+      "url": "https://taskflow-demo.co.uk",
+      "githubUrl": "https://github.com/oliver-davies/taskflow"
+    }
+  ],
+  "awards": [],
+  "certificates": [],
+  "languages": [],
+  "meta": {
+    "sourceFormat": "builder",
+    "regionSignals": {
+      "hasPhoto": false,
+      "hasDateOfBirth": false,
+      "hasMaritalStatus": false,
+      "hasNationality": false,
+      "hasDeclarationLine": false,
+      "spellingVariant": "en-GB",
+      "pageCount": 1
+    }
+  }
+}

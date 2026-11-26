@@ -1,0 +1,64 @@
+{
+  "basics": {
+    "name": "Lukas Weber",
+    "email": "lukas@example.de",
+    "profiles": []
+  },
+  "work": [
+    {
+      "name": "Berlin Analytics",
+      "position": "Data Analyst Intern",
+      "startDate": "2025-03",
+      "endDate": "2025-08",
+      "highlights": [
+        "Responsible for handling data extraction and cleaning tasks, and worked with the team to build new databases",
+        "Assisted in creating reports and dashboards for business teams while being a reliable team player who is detail-oriented"
+      ]
+    }
+  ],
+  "education": [
+    {
+      "institution": "TU Berlin",
+      "area": "Information Systems",
+      "studyType": "B.Sc.",
+      "startDate": "2022-10",
+      "endDate": "2025-09",
+      "gpa": {
+        "value": 1.7,
+        "scale": 1
+      },
+      "coursework": ["Database Systems", "Business Intelligence"]
+    }
+  ],
+  "skills": [
+    {
+      "name": "Databases & Tools",
+      "keywords": ["Python", "Excel", "R"]
+    }
+  ],
+  "projects": [
+    {
+      "name": "Customer Segmentation Engine",
+      "description": "K-Means clustering on retail transaction data",
+      "highlights": [
+        "Worked on clustering algorithms in Python and helped with data visualization formatting",
+        "Involved in documenting the algorithms and making reports, showing a self-motivated approach to tasks"
+      ]
+    }
+  ],
+  "awards": [],
+  "certificates": [],
+  "languages": [],
+  "meta": {
+    "sourceFormat": "builder",
+    "regionSignals": {
+      "hasPhoto": false,
+      "hasDateOfBirth": false,
+      "hasMaritalStatus": false,
+      "hasNationality": false,
+      "hasDeclarationLine": false,
+      "spellingVariant": "en-GB",
+      "pageCount": 1
+    }
+  }
+}

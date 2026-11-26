@@ -1,0 +1,65 @@
+{
+  "basics": {
+    "name": "Aarav Sharma",
+    "email": "aarav@example.in",
+    "profiles": []
+  },
+  "work": [
+    {
+      "name": "Mumbai Capital",
+      "position": "Investment Banking Intern",
+      "startDate": "2025-05",
+      "endDate": "2025-07",
+      "highlights": [
+        "Responsible for assisting the senior analyst with market research and database updates",
+        "Worked on updating slides and presentations for customer pitching sessions",
+        "Helped with data collection and financial statement formatting tasks"
+      ]
+    }
+  ],
+  "education": [
+    {
+      "institution": "IIT Bombay",
+      "area": "Engineering Physics",
+      "studyType": "B.Tech.",
+      "startDate": "2022-07",
+      "endDate": "2026-05",
+      "gpa": {
+        "value": 8.5,
+        "scale": 10
+      },
+      "coursework": ["Financial Engineering", "Corporate Finance"]
+    }
+  ],
+  "skills": [
+    {
+      "name": "General",
+      "keywords": ["Python", "PowerPoint", "Word"]
+    }
+  ],
+  "projects": [
+    {
+      "name": "Valuation Study",
+      "description": "Valuation of public tech companies",
+      "highlights": [
+        "Worked with a peer to select comparative companies and look up their pricing metrics",
+        "Involved in formatting the final reports and presentations"
+      ]
+    }
+  ],
+  "awards": [],
+  "certificates": [],
+  "languages": [],
+  "meta": {
+    "sourceFormat": "builder",
+    "regionSignals": {
+      "hasPhoto": false,
+      "hasDateOfBirth": false,
+      "hasMaritalStatus": false,
+      "hasNationality": false,
+      "hasDeclarationLine": true,
+      "spellingVariant": "en-GB",
+      "pageCount": 1
+    }
+  }
+}

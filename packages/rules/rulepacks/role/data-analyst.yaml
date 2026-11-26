@@ -1,0 +1,56 @@
+# Role pack: Data Analyst
+# Technical role expecting strong database, analysis, and dashboarding skills.
+pack: role/data-analyst
+kind: role
+name: Data Analyst
+version: "0.1.0"
+rules:
+  - id: da-sql-required
+    title: Add SQL to your skills — it is the primary data analyst tool
+    priority: P0
+    check: skills-keywords-missing
+    params:
+      anyOf: ["sql"]
+      match: substring
+      label: SQL
+    why: >-
+      SQL is the industry-standard database query language; almost all data analyst
+      positions list it as a core requirement.
+    source:
+      url: https://www.coursera.org/articles/data-analyst-resume
+      note: SQL is the most requested skill in data analyst job listings
+
+  - id: da-visualization-required
+    title: Include data visualization tools (Tableau, Power BI)
+    priority: P1
+    check: skills-keywords-missing
+    params:
+      anyOf: ["tableau", "power bi", "powerbi", "qlik", "looker", "visualization"]
+      match: exact
+      label: "visualization tools (Tableau, Power BI, ...)"
+    why: >-
+      Data analysts must translate raw data into actionable dashboards and visualizations;
+      listing Tableau, Power BI, Looker, or Qlik demonstrates this capability.
+    source:
+      url: https://www.coursera.org/articles/data-analyst-resume
+      note: Data visualization tool proficiency is a standard requirement for analyst positions
+
+# Recruiter-search keywords for the findability score (D-039).
+# Source: O*NET Data Scientists (15-1251.00) / tracking ledger: 15 instances
+searchKeywords:
+  - term: "SQL"
+    aliases: ["database", "relational database", "queries", "querying"]
+  - term: "Tableau"
+    aliases: ["data visualization", "visualization"]
+  - term: "Power BI"
+    aliases: ["powerbi", "dashboards", "dashboarding"]
+  - term: "Python"
+    aliases: ["pandas", "numpy", "scikit-learn"]
+  - term: "Excel"
+    aliases: ["spreadsheets", "advanced excel"]
+  - term: "ETL"
+    aliases: ["data pipeline", "data integration"]
+  - term: "R"
+    aliases: ["statistical computing"]
+  - term: "statistics"
+    aliases: ["statistical analysis", "regression", "hypothesis testing"]

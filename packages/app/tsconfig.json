@@ -1,0 +1,25 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "lib": ["ES2022", "DOM", "DOM.Iterable", "WebWorker"],
+    "jsx": "react-jsx",
+    // The frontend opts out of the backend's exactOptionalPropertyTypes: in the
+    // UI, `undefined` is a real value — degraded reports legitimately carry
+    // absent findability/impact scores that render as "—" (Start→SPA ADR).
+    "exactOptionalPropertyTypes": false,
+    "types": ["vite/client", "node"],
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  },
+  "include": [
+    "src",
+    "harness",
+    "e2e",
+    "server",
+    "vite.config.ts",
+    "mcp.vite.config.ts",
+    "local.vite.config.ts",
+    "playwright.config.ts"
+  ]
+}

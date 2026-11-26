@@ -1,0 +1,122 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+@import "@fontsource/libre-baskerville/400.css";
+@import "@fontsource/libre-baskerville/400-italic.css";
+@import "@fontsource/libre-baskerville/700.css";
+@import "@fontsource/ibm-plex-sans/300.css";
+@import "@fontsource/ibm-plex-sans/400.css";
+@import "@fontsource/ibm-plex-sans/500.css";
+@import "@fontsource/ibm-plex-sans/600.css";
+@import "@fontsource/ibm-plex-mono/400.css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-serif: "Libre Baskerville", ui-serif, Georgia, serif;
+  --font-sans: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --color-ink: var(--ink);
+  --color-paper: var(--paper);
+  --color-rule: var(--rule);
+  --color-flag-p0: var(--flag-p0);
+  --color-flag-p1: var(--flag-p1);
+  --color-flag-p2: var(--flag-p2);
+}
+
+:root {
+  --radius: 0.25rem;
+
+  /* Paper & Ink editorial palette (harvested from the Lovable cv-guide
+     redesign, D-047) — warm off-white paper, near-black ink, no accent color;
+     hierarchy comes from type and rules, not color. */
+  --paper: #f5f3ee;
+  --paper-2: #e8e4dd;
+  --ink: #0d0d0d;
+  --ink-soft: #2d2d2d;
+  --rule: rgba(45, 45, 45, 0.15);
+
+  --flag-p0: oklch(0.5 0.15 25);
+  --flag-p1: oklch(0.62 0.12 60);
+  --flag-p2: oklch(0.55 0.03 260);
+
+  --background: var(--paper);
+  --foreground: var(--ink);
+  --card: #ffffff;
+  --card-foreground: var(--ink);
+  --popover: #ffffff;
+  --popover-foreground: var(--ink);
+  --primary: var(--ink);
+  --primary-foreground: var(--paper);
+  --secondary: var(--paper-2);
+  --secondary-foreground: var(--ink);
+  --muted: var(--paper-2);
+  --muted-foreground: rgba(45, 45, 45, 0.7);
+  --accent: var(--paper-2);
+  --accent-foreground: var(--ink);
+  --destructive: oklch(0.55 0.19 27);
+  --destructive-foreground: var(--paper);
+  --border: var(--rule);
+  --input: rgba(45, 45, 45, 0.25);
+  --ring: var(--ink);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  html {
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-serif);
+    font-weight: 400;
+    letter-spacing: -0.01em;
+  }
+}
+
+@utility container-prose {
+  max-width: 42rem;
+  margin-inline: auto;
+  padding-inline: 1.5rem;
+}
+
+@utility container-page {
+  max-width: 80rem;
+  margin-inline: auto;
+  padding-inline: 1.5rem;
+}

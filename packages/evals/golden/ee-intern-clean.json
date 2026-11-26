@@ -1,0 +1,73 @@
+{
+  "basics": {
+    "name": "Jane Doe",
+    "email": "ee-student@example.edu",
+    "profiles": [
+      {
+        "network": "GitHub",
+        "url": "https://github.com/ee-student"
+      }
+    ]
+  },
+  "work": [
+    {
+      "name": "Power Grid Inc",
+      "position": "Electrical Intern",
+      "startDate": "2023-05",
+      "endDate": "2023-08",
+      "highlights": [
+        "Designed 4 PCB layouts using Altium Designer for power distribution",
+        "Tested analog circuits with oscilloscope and multimeter"
+      ]
+    }
+  ],
+  "education": [
+    {
+      "institution": "Tech University",
+      "area": "Electrical Engineering",
+      "studyType": "B.S.",
+      "startDate": "2020-09",
+      "endDate": "2024-06",
+      "gpa": {
+        "value": 3.7,
+        "scale": 4
+      },
+      "coursework": ["Circuits", "Signals and Systems", "Embedded Systems"]
+    }
+  ],
+  "skills": [
+    {
+      "name": "Engineering Software",
+      "keywords": ["Altium", "Verilog", "SPICE", "Python", "Oscilloscope"]
+    }
+  ],
+  "projects": [
+    {
+      "name": "embedded-sensor",
+      "description": "Built Arduino-based smart sensor node",
+      "highlights": ["Programmed microcontroller and soldered 12 pin headers onto custom shield"]
+    }
+  ],
+  "awards": [],
+  "certificates": [
+    {
+      "name": "Fundamentals of Engineering (FE)",
+      "issuer": "NCEES",
+      "date": "2024-03",
+      "url": "https://verify.ncees.org/fe/456"
+    }
+  ],
+  "languages": [],
+  "meta": {
+    "sourceFormat": "builder",
+    "regionSignals": {
+      "hasPhoto": false,
+      "hasDateOfBirth": false,
+      "hasMaritalStatus": false,
+      "hasNationality": false,
+      "hasDeclarationLine": false,
+      "spellingVariant": "en-US",
+      "pageCount": 1
+    }
+  }
+}

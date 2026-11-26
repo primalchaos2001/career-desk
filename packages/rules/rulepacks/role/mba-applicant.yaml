@@ -1,0 +1,68 @@
+# Role pack: MBA Applicant
+# Sourced from reputable MBA admissions guidelines: focus on leadership, career progression, and quantified business impact.
+pack: role/mba-applicant
+kind: role
+name: MBA Applicant
+version: "0.1.0"
+rules:
+  - id: mba-quantify-business-impact
+    title: Quantify your business impact using %, $, or scale metrics
+    priority: P0
+    check: quantify-business-impact
+    why: >-
+      MBA admissions committees look for quantified results (revenue, costs, percentages, team size)
+      to gauge the scale and significance of your achievements, rather than a list of tasks.
+    source:
+      url: https://stacyblackman.com/mba-resume-guide/
+      note: Stacy Blackman recommends quantifying every accomplishment with percentages, numbers, or dollars.
+
+  - id: mba-leadership-scope-required
+    title: Demonstrate explicit leadership scope or management evidence
+    priority: P0
+    check: leadership-scope-required
+    why: >-
+      Leadership potential is the single most important dimension evaluated by MBA admissions screeners.
+      Your resume must contain explicit evidence of leadership, initiative, team coordination, or project stewardship.
+    source:
+      url: https://menlocoaching.com/mba-applications/mba-resume/
+      note: Top-tier MBA programs filter candidates heavily on proven leadership experience and scope.
+
+  - id: mba-career-progression-recommended
+    title: Highlight career progression and promotions
+    priority: P1
+    check: career-progression-recommended
+    why: >-
+      MBA admissions look for candidates with a trajectory of career growth and increasing responsibility.
+      This check highlights if there is no clear evidence of title progression or promotions.
+    source:
+      url: https://www.mba.com/explore-mba-programs/enroll/application-prep/how-to-write-an-mba-resume
+      note: Showcase promotions or logical progression of titles to prove your trajectory of growth.
+
+  - id: mba-extracurricular-impact-recommended
+    title: Show extracurricular involvement and community impact
+    priority: P1
+    check: extracurricular-impact-recommended
+    why: >-
+      MBA programs value candidates who contribute outside their professional jobs.
+      Extracurricular activities, volunteer work, or club leadership demonstrate well-roundedness and community initiative.
+    source:
+      url: https://stacyblackman.com/mba-resume-guide/
+      note: Active extracurricular and community involvement is highly weighted by admissions boards.
+
+overrides:
+  stu-quantify:
+    disabled: true
+  leadership-missing:
+    disabled: true
+
+# Recruiter-search keywords for the findability score (D-039).
+# Source: MBA Admissions Guides / tracking ledger: 8 instances
+searchKeywords:
+  - term: "leadership"
+    aliases: ["led", "managed", "spearheaded", "directed", "supervised", "president", "founder", "chairman", "captain"]
+  - term: "business impact"
+    aliases: ["P&L", "revenue", "profit", "budget", "headcount", "ROI", "KPI", "KPIs", "sales", "margin"]
+  - term: "strategy"
+    aliases: ["cross-functional", "scaled", "launched", "negotiated", "growth", "optimization", "transformation"]
+  - term: "management"
+    aliases: ["stakeholders", "clients", "customers", "operations", "project management", "budgeting"]

@@ -1,0 +1,53 @@
+# Role pack: Consulting Analyst
+# Sourced from MBB recruiter guidelines: high quantification and proven leadership evidence.
+pack: role/consulting-analyst
+kind: role
+name: Consulting Analyst
+version: "0.1.0"
+rules:
+  - id: con-quantify-bullets
+    title: Quantify a higher percentage of your experience and project bullets
+    priority: P1
+    check: unquantified-highlights
+    params:
+      minRatio: 0.3
+    why: >-
+      Consulting firms (McKinsey, BCG, Bain) heavily filter on quantified impact. Resumes with at
+      least 70% of bullets containing numbers have a significantly higher callback rate.
+    source:
+      url: https://www.caseinterviewhub.com/post/perfect-consulting-cv-mckinsey-bcg-bain
+      note: Recruiter screens look for quantified achievements in every single project or job.
+
+  - id: con-leadership-evidence
+    title: Highlight leadership roles or awards on your resume
+    priority: P1
+    check: leadership-missing
+    why: >-
+      MBB screeners look for evidence of leadership, initiative, and drive.
+      This check looks for awards or explicit leadership keywords (e.g. Lead, Founder, President) in your positions/projects.
+      If you have leadership experience not flagged by these keywords, ensure they are prominently described.
+    source:
+      url: https://strategycase.com/consulting-resume/
+      note: Leadership evidence is one of the three primary dimensions evaluated on MBB resumes.
+
+overrides:
+  stu-quantify:
+    disabled: true
+
+# Recruiter-search keywords for the findability score (D-039).
+# Source: Case Interview Prep Guides / tracking ledger: 14 instances
+searchKeywords:
+  - term: "market research"
+    aliases: ["industry analysis", "competitive landscape", "benchmarking"]
+  - term: "financial analysis"
+    aliases: ["business valuation", "budgeting", "financial modeling", "excel"]
+  - term: "problem solving"
+    aliases: ["case study", "structured analysis", "frameworks", "data-driven"]
+  - term: "client relations"
+    aliases: ["stakeholder management", "presentation", "powerpoint", "client-facing"]
+  - term: "Agile"
+    aliases: ["scrum", "project management", "coordination"]
+  - term: "Excel"
+    aliases: ["spreadsheets", "data analysis", "modeling"]
+  - term: "PowerPoint"
+    aliases: ["slides", "presentation", "deck"]

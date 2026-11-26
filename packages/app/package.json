@@ -1,0 +1,53 @@
+{
+  "name": "@tailorats/app",
+  "version": "0.0.0",
+  "private": true,
+  "license": "MIT",
+  "type": "module",
+  "description": "CV Guide UI (Phase 2, D-026): TanStack Router static SPA running the real @tailorats/pipeline in a Web Worker. Fully client-side \u00e2\u20ac\u201d no server runtime in the build artifact (D-010/D-011).",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "e2e": "playwright test",
+    "typecheck": "tsc --noEmit",
+    "mcp:build": "vite build --config mcp.vite.config.ts",
+    "launcher:build": "vite build --config local.vite.config.ts",
+    "local:build": "vite build && vite build --config mcp.vite.config.ts && vite build --config local.vite.config.ts"
+  },
+  "dependencies": {
+    "@fontsource/ibm-plex-mono": "^5.2.7",
+    "@fontsource/ibm-plex-sans": "^5.2.8",
+    "@fontsource/libre-baskerville": "^5.2.10",
+    "@tailorats/core": "workspace:*",
+    "@tailorats/llm": "workspace:*",
+    "@tailorats/pipeline": "workspace:*",
+    "@tailorats/rules": "workspace:*",
+    "@tanstack/react-query": "^5.101.1",
+    "@tanstack/react-router": "^1.170.16",
+    "clsx": "^2.1.1",
+    "fflate": "^0.8.3",
+    "idb": "^8.0.3",
+    "pdfjs-dist": "^6.1.200",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "sonner": "^2.0.7",
+    "tailwind-merge": "^3.5.0",
+    "tw-animate-css": "^1.3.4"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.61.1",
+    "@tailwindcss/vite": "^4.2.1",
+    "@tanstack/router-plugin": "^1.168.18",
+    "@types/node": "^22.16.5",
+    "@types/react": "^19.2.0",
+    "@types/react-dom": "^19.2.0",
+    "@unified-latex/unified-latex-util-arguments": "^1.8.4",
+    "@unified-latex/unified-latex-util-parse": "^1.8.4",
+    "@vitejs/plugin-react": "^5.2.0",
+    "tailwindcss": "^4.2.1",
+    "typescript": "^5.9.3",
+    "vite": "^8.1.4",
+    "zod": "^4.4.3"
+  }
+}

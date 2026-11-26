@@ -1,0 +1,160 @@
+{
+  "basics": {
+    "name": "Jordan Rivera",
+    "email": "jordan@example.com",
+    "url": "https://jordanrivera.example.com/",
+    "profiles": [
+      {
+        "network": "LinkedIn",
+        "url": "https://linkedin.com/in/jordanrivera"
+      },
+      {
+        "network": "GitHub",
+        "url": "https://github.com/jordanrivera"
+      }
+    ]
+  },
+  "work": [
+    {
+      "name": "Acme Silicon",
+      "position": "Design & Verification Engineer",
+      "startDate": "2025-07",
+      "highlights": [
+        "RTL Optimization: Reduced gate count by 5 in target modules and lowered power by 23%.",
+        "Accelerator Design: Built parametric SystemVerilog modules for an NPU inference pipeline."
+      ]
+    },
+    {
+      "name": "State University",
+      "position": "Research Intern",
+      "startDate": "2022-05",
+      "endDate": "2022-05",
+      "highlights": [
+        "Prototyped a telemedicine application with integrated health-record tracking."
+      ]
+    }
+  ],
+  "education": [
+    {
+      "institution": "State University",
+      "area": "Electronics Engineering",
+      "studyType": "M.Tech.",
+      "startDate": "2023",
+      "endDate": "2025",
+      "courses": [],
+      "gpa": {
+        "value": 8.73,
+        "scale": 10
+      },
+      "coursework": []
+    },
+    {
+      "institution": "City Institute of Technology",
+      "area": "Electronics Engineering",
+      "studyType": "B.Tech.",
+      "startDate": "2019",
+      "endDate": "2023",
+      "courses": [],
+      "gpa": {
+        "value": 8.75,
+        "scale": 10
+      },
+      "coursework": []
+    },
+    {
+      "institution": "Central Public School",
+      "studyType": "Class 12th CBSE",
+      "startDate": "2017",
+      "endDate": "2017",
+      "score": "91%",
+      "courses": [],
+      "coursework": []
+    }
+  ],
+  "skills": [
+    {
+      "name": "Hardware & DV",
+      "keywords": ["SystemVerilog", "VHDL", "UVM", "RTL Design", "Logic Synthesis"]
+    },
+    {
+      "name": "Protocols",
+      "keywords": ["AXI4", "AXI5", "APB", "SPI", "I3C"]
+    },
+    {
+      "name": "EDA Tools",
+      "keywords": ["Cadence Xcelium", "SimVision", "Synopsys Design Compiler", "Vivado"]
+    }
+  ],
+  "projects": [
+    {
+      "name": "FPGA Ultrasound Imaging System",
+      "highlights": [
+        "Acceleration: Designed a real-time processing pipeline with beamforming and envelope detection.",
+        "Deployment: Verified multi-channel reconstruction on a Zynq UltraScale+ MPSoC."
+      ],
+      "keywords": [],
+      "startDate": "2024",
+      "endDate": "2024",
+      "roles": []
+    },
+    {
+      "name": "Race Prediction Engine",
+      "highlights": ["Analytics: Built a telemetry pipeline using LSTMs and XGBoost in Python."],
+      "keywords": [],
+      "startDate": "2025",
+      "endDate": "2026",
+      "roles": []
+    }
+  ],
+  "awards": [],
+  "certificates": [],
+  "languages": [],
+  "meta": {
+    "sourceFormat": "tex",
+    "texSourceMap": [
+      {
+        "section": "basics",
+        "startLine": 27,
+        "endLine": 35
+      },
+      {
+        "section": "work",
+        "startLine": 36,
+        "endLine": 46
+      },
+      {
+        "section": "skills",
+        "startLine": 47,
+        "endLine": 53
+      },
+      {
+        "section": "projects",
+        "startLine": 54,
+        "endLine": 64
+      },
+      {
+        "section": "education",
+        "startLine": 65,
+        "endLine": 71
+      },
+      {
+        "section": "interests",
+        "startLine": 72,
+        "endLine": 76
+      },
+      {
+        "section": "awards",
+        "startLine": 77,
+        "endLine": 81
+      }
+    ],
+    "regionSignals": {
+      "hasPhoto": false,
+      "hasDateOfBirth": false,
+      "hasMaritalStatus": false,
+      "hasNationality": false,
+      "hasDeclarationLine": false,
+      "spellingVariant": "unknown"
+    }
+  }
+}

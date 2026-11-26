@@ -1,0 +1,25 @@
+{
+  "name": "@tailorats/core",
+  "version": "0.0.0",
+  "private": true,
+  "license": "MIT",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@types/node": "^26.1.0",
+    "pdf-lib": "^1.17.1",
+    "typescript": "^5.8.0"
+  },
+  "dependencies": {
+    "@unified-latex/unified-latex-types": "^1.8.4",
+    "@unified-latex/unified-latex-util-arguments": "^1.8.4",
+    "@unified-latex/unified-latex-util-parse": "^1.8.4",
+    "pdfjs-dist": "^6.1.200",
+    "zod": "^4.0.0"
+  }
+}

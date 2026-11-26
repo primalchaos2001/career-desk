@@ -1,0 +1,1848 @@
+{
+  "industry/consulting": {
+    "pack": "industry/consulting",
+    "kind": "industry",
+    "name": "Consulting",
+    "version": "0.1.0",
+    "rules": [
+      {
+        "id": "con-one-page",
+        "title": "Limit your resume to exactly one page",
+        "layer": "context",
+        "priority": "P0",
+        "check": "page-count-exceeds",
+        "params": {
+          "max": 1
+        },
+        "why": "Consulting recruiters screen resumes in under 10 seconds. Keeping your resume to exactly one page is a critical test of your ability to synthesize information and prioritize your impact.",
+        "source": {
+          "url": "https://strategycase.com/consulting-resume/",
+          "note": "The absolute maximum length for student consulting candidates is one page."
+        }
+      },
+      {
+        "id": "con-no-photo",
+        "title": "Remove the photo — consulting resumes never include one",
+        "layer": "context",
+        "priority": "P0",
+        "check": "has-photo",
+        "params": {},
+        "why": "In line with professional services standards in major markets, including a photo on a consulting resume is unnecessary and often leads to automatic rejection due to anti-bias screening protocols.",
+        "source": {
+          "url": "https://igotanoffer.com/blogs/mckinsey-case-interview-blog/consulting-resume",
+          "note": "US and UK consulting firms mandate resumes without photos."
+        }
+      }
+    ],
+    "overrides": {
+      "stu-gpa": {
+        "priority": "P1"
+      },
+      "us-one-page": {
+        "disabled": true
+      },
+      "uk-page-count": {
+        "disabled": true
+      },
+      "in-two-pages": {
+        "disabled": true
+      },
+      "de-page-count": {
+        "disabled": true
+      },
+      "us-no-photo": {
+        "disabled": true
+      },
+      "uk-no-photo": {
+        "disabled": true
+      }
+    },
+    "searchKeywords": [
+      {
+        "term": "strategy",
+        "aliases": [
+          "strategic planning",
+          "business development",
+          "growth strategy"
+        ]
+      },
+      {
+        "term": "benchmarking",
+        "aliases": [
+          "competitor analysis",
+          "best practices",
+          "market analysis"
+        ]
+      },
+      {
+        "term": "operations",
+        "aliases": [
+          "process optimization",
+          "supply chain",
+          "cost reduction"
+        ]
+      },
+      {
+        "term": "data analytics",
+        "aliases": [
+          "data-driven",
+          "metrics",
+          "quantitative analysis"
+        ]
+      }
+    ]
+  },
+  "industry/finance": {
+    "pack": "industry/finance",
+    "kind": "industry",
+    "name": "Finance",
+    "version": "0.1.0",
+    "rules": [
+      {
+        "id": "fin-no-photo",
+        "title": "Remove the photo — finance resumes never include one",
+        "layer": "context",
+        "priority": "P0",
+        "check": "has-photo",
+        "params": {},
+        "why": "Finance and investment banking are highly conservative fields globally. Including a photo is considered unprofessional and is a common reason for immediate resume rejection, even in regions where photos are standard for other fields.",
+        "source": {
+          "url": "https://mergersandinquisitions.com/free-investment-banking-resume-template/",
+          "note": "Finance resumes must not include photos."
+        }
+      },
+      {
+        "id": "fin-one-page",
+        "title": "Limit your resume to exactly one page",
+        "layer": "context",
+        "priority": "P0",
+        "check": "page-count-exceeds",
+        "params": {
+          "max": 1
+        },
+        "why": "A strict one-page limit is universal in finance and investment banking recruiting for students and new graduates. Exceeding this limit is viewed as a failure of prioritization.",
+        "source": {
+          "url": "https://mergersandinquisitions.com/free-investment-banking-resume-template/",
+          "note": "Finance/IB standard template requires exactly one page."
+        }
+      }
+    ],
+    "overrides": {
+      "stu-gpa": {
+        "priority": "P1"
+      },
+      "us-one-page": {
+        "disabled": true
+      },
+      "uk-page-count": {
+        "disabled": true
+      },
+      "in-two-pages": {
+        "disabled": true
+      },
+      "de-page-count": {
+        "disabled": true
+      },
+      "us-no-photo": {
+        "disabled": true
+      },
+      "uk-no-photo": {
+        "disabled": true
+      }
+    },
+    "searchKeywords": [
+      {
+        "term": "quantitative analysis",
+        "aliases": [
+          "quant",
+          "statistics",
+          "risk modeling",
+          "quantitative modeling"
+        ]
+      },
+      {
+        "term": "portfolio management",
+        "aliases": [
+          "asset allocation",
+          "investment strategy",
+          "portfolio strategy"
+        ]
+      },
+      {
+        "term": "Bloomberg",
+        "aliases": [
+          "bloomberg terminal",
+          "market data",
+          "bmc"
+        ]
+      },
+      {
+        "term": "risk management",
+        "aliases": [
+          "hedging",
+          "var",
+          "compliance",
+          "credit risk"
+        ]
+      }
+    ]
+  },
+  "region/de": {
+    "pack": "region/de",
+    "kind": "region",
+    "name": "Germany",
+    "version": "0.1.0",
+    "rules": [
+      {
+        "id": "de-page-count",
+        "title": "Keep it under two pages",
+        "layer": "context",
+        "priority": "P1",
+        "check": "page-count-exceeds",
+        "params": {
+          "max": 2
+        },
+        "why": "Standard German CVs (Lebenslauf) should not exceed two pages for early-career candidates to remain concise and readable.",
+        "source": {
+          "url": "https://www.topcv.io/blog/resume-vs-cv-differences-by-country-2026",
+          "note": "Germany section — standard early career CV length is up to 2 pages"
+        }
+      },
+      {
+        "id": "de-spelling",
+        "title": "Use British English spelling for English CVs in Germany",
+        "layer": "context",
+        "priority": "P2",
+        "check": "spelling-variant-mismatch",
+        "params": {
+          "expected": "en-GB"
+        },
+        "why": "English-language CVs in Germany and Europe typically follow British English spelling conventions (e.g., \"optimise\", \"colour\").",
+        "source": {
+          "url": "https://resume.io/blog/international-resume-cv-writing",
+          "note": "English CVs in Europe typically follow British English spelling conventions"
+        }
+      },
+      {
+        "id": "de-no-declaration",
+        "title": "Remove the declaration line",
+        "layer": "context",
+        "priority": "P2",
+        "check": "has-declaration-line",
+        "params": {},
+        "why": "Declaration lines are a regional South Asian convention; in Germany they are not used and waste valuable space.",
+        "source": {
+          "url": "https://www.careeraddict.com/resume-differences-country-to-country",
+          "note": "declaration lines are not used in German CVs"
+        }
+      }
+    ],
+    "overrides": {
+      "ee-fe-eit-recommended": {
+        "disabled": true
+      }
+    },
+    "searchKeywords": []
+  },
+  "region/india": {
+    "pack": "region/india",
+    "kind": "region",
+    "name": "India",
+    "version": "0.1.0",
+    "rules": [
+      {
+        "id": "in-two-pages",
+        "title": "Keep it under two pages",
+        "layer": "context",
+        "priority": "P1",
+        "check": "page-count-exceeds",
+        "params": {
+          "max": 2
+        },
+        "why": "Indian resumes run longer than US ones, but campus recruiters and off-campus portals still skim; past two pages you're hiding your best work.",
+        "source": {
+          "url": "https://www.topcv.io/blog/resume-vs-cv-differences-by-country-2026",
+          "note": "India commonly 2 pages for freshers"
+        }
+      },
+      {
+        "id": "in-spelling",
+        "title": "Use one English spelling variant consistently",
+        "layer": "context",
+        "priority": "P2",
+        "check": "spelling-mixed",
+        "params": {},
+        "why": "Indian résumés are written in both British and American English — either is fine. Mixing en-US and en-GB spellings in the same document is what reads as careless.",
+        "source": {
+          "url": "https://resume.io/blog/international-resume-cv-writing",
+          "note": "consistency within one spelling convention; India accepts either"
+        }
+      }
+    ],
+    "overrides": {
+      "ee-fe-eit-recommended": {
+        "disabled": true
+      }
+    },
+    "searchKeywords": []
+  },
+  "region/uk": {
+    "pack": "region/uk",
+    "kind": "region",
+    "name": "United Kingdom",
+    "version": "0.1.0",
+    "rules": [
+      {
+        "id": "uk-no-photo",
+        "title": "Remove the photo — UK CVs never include one",
+        "layer": "context",
+        "priority": "P0",
+        "check": "has-photo",
+        "params": {},
+        "why": "UK employers exclude CVs with photos to prevent discrimination bias under the Equality Act; a photo can lead to rejection before review.",
+        "source": {
+          "url": "https://www.topcv.io/blog/resume-vs-cv-differences-by-country-2026",
+          "note": "UK section — photos discouraged due to discrimination legislation"
+        },
+        "suggestion": {
+          "before": "Photo in header",
+          "after": "No photo"
+        }
+      },
+      {
+        "id": "uk-no-personal-details",
+        "title": "Remove date of birth / marital status / nationality",
+        "layer": "context",
+        "priority": "P0",
+        "check": "has-personal-details",
+        "params": {},
+        "why": "Protected personal characteristics (age, marital status, nationality) are omitted from UK CVs to prevent bias and ensure compliance with UK anti-discrimination laws.",
+        "source": {
+          "url": "https://nationalcareers.service.gov.uk/careers-advice/cv-sections",
+          "note": "Avoid including personal information like age, date of birth, marital status, or nationality."
+        }
+      },
+      {
+        "id": "uk-page-count",
+        "title": "Keep it under two pages",
+        "layer": "context",
+        "priority": "P1",
+        "check": "page-count-exceeds",
+        "params": {
+          "max": 2
+        },
+        "why": "UK early-career CVs are expected to be at most two pages long; going over two pages dilutes your key details and violates standard recruiters' expectations.",
+        "source": {
+          "url": "https://www.topcv.io/blog/resume-vs-cv-differences-by-country-2026",
+          "note": "UK standard CV length for early career is up to 2 pages."
+        }
+      },
+      {
+        "id": "uk-spelling",
+        "title": "Use British English spelling consistently",
+        "layer": "context",
+        "priority": "P2",
+        "check": "spelling-variant-mismatch",
+        "params": {
+          "expected": "en-GB"
+        },
+        "why": "UK applications must use British English spelling (e.g., \"optimise\", \"colour\") to show localization and consistency.",
+        "source": {
+          "url": "https://resume.io/blog/international-resume-cv-writing",
+          "note": "match spelling conventions to the target country (en-GB for the UK)"
+        }
+      },
+      {
+        "id": "uk-no-declaration",
+        "title": "Remove the declaration line",
+        "layer": "context",
+        "priority": "P2",
+        "check": "has-declaration-line",
+        "params": {},
+        "why": "Declaration lines are a regional South Asian convention; in the UK they are not used and waste valuable space.",
+        "source": {
+          "url": "https://www.careeraddict.com/resume-differences-country-to-country",
+          "note": "declaration lines are not used in UK CVs"
+        }
+      }
+    ],
+    "overrides": {
+      "ee-fe-eit-recommended": {
+        "disabled": true
+      }
+    },
+    "searchKeywords": []
+  },
+  "region/us": {
+    "pack": "region/us",
+    "kind": "region",
+    "name": "United States",
+    "version": "0.1.0",
+    "rules": [
+      {
+        "id": "us-no-photo",
+        "title": "Remove the photo — US resumes never include one",
+        "layer": "context",
+        "priority": "P0",
+        "check": "has-photo",
+        "params": {},
+        "why": "US employers routinely discard resumes with photos to avoid discrimination-liability; a photo hurts you even when it's good.",
+        "source": {
+          "url": "https://resume.io/blog/international-resume-cv-writing",
+          "note": "US section — photos discouraged for bias/legal reasons"
+        },
+        "suggestion": {
+          "before": "Photo in header",
+          "after": "No photo; use the space for a project or skills line"
+        }
+      },
+      {
+        "id": "us-no-personal-details",
+        "title": "Remove date of birth / marital status / nationality",
+        "layer": "context",
+        "priority": "P0",
+        "check": "has-personal-details",
+        "params": {},
+        "why": "Protected personal information is never disclosed on US resumes; recruiters are trained to treat it as a red flag.",
+        "source": {
+          "url": "https://elevate.iit.edu/resources/how-do-resumes-differ-from-country-to-country/",
+          "note": "US candidates do not disclose protected personal information"
+        }
+      },
+      {
+        "id": "us-one-page",
+        "title": "Cut to one page for early-career US applications",
+        "layer": "context",
+        "priority": "P1",
+        "check": "page-count-exceeds",
+        "params": {
+          "max": 1
+        },
+        "why": "US recruiters expect new-grad/intern resumes on a single page; extra pages dilute your strongest material in the 6-second skim.",
+        "source": {
+          "url": "https://www.topcv.io/blog/resume-vs-cv-differences-by-country-2026",
+          "note": "US resumes 1–2 pages; 1 page standard for early career"
+        }
+      },
+      {
+        "id": "us-spelling",
+        "title": "Use American English spelling throughout",
+        "layer": "context",
+        "priority": "P2",
+        "check": "spelling-variant-mismatch",
+        "params": {
+          "expected": "en-US"
+        },
+        "why": "Mixed or British spellings (optimise, colour) read as unlocalized to US reviewers and keyword searches use American variants.",
+        "source": {
+          "url": "https://resume.io/blog/international-resume-cv-writing",
+          "note": "match spelling conventions to the target country"
+        }
+      },
+      {
+        "id": "us-no-declaration",
+        "title": "Remove the declaration line",
+        "layer": "context",
+        "priority": "P2",
+        "check": "has-declaration-line",
+        "params": {},
+        "why": "\"I hereby declare the above is true...\" is an Indian/South-Asian convention; on a US resume it reads as boilerplate and wastes a line.",
+        "source": {
+          "url": "https://www.careeraddict.com/resume-differences-country-to-country",
+          "note": "declaration lines are a regional convention, not used in US resumes"
+        }
+      }
+    ],
+    "overrides": {},
+    "searchKeywords": []
+  },
+  "role/consulting-analyst": {
+    "pack": "role/consulting-analyst",
+    "kind": "role",
+    "name": "Consulting Analyst",
+    "version": "0.1.0",
+    "rules": [
+      {
+        "id": "con-quantify-bullets",
+        "title": "Quantify a higher percentage of your experience and project bullets",
+        "layer": "context",
+        "priority": "P1",
+        "check": "unquantified-highlights",
+        "params": {
+          "minRatio": 0.3
+        },
+        "why": "Consulting firms (McKinsey, BCG, Bain) heavily filter on quantified impact. Resumes with at least 70% of bullets containing numbers have a significantly higher callback rate.",
+        "source": {
+          "url": "https://www.caseinterviewhub.com/post/perfect-consulting-cv-mckinsey-bcg-bain",
+          "note": "Recruiter screens look for quantified achievements in every single project or job."
+        }
+      },
+      {
+        "id": "con-leadership-evidence",
+        "title": "Highlight leadership roles or awards on your resume",
+        "layer": "context",
+        "priority": "P1",
+        "check": "leadership-missing",
+        "params": {},
+        "why": "MBB screeners look for evidence of leadership, initiative, and drive. This check looks for awards or explicit leadership keywords (e.g. Lead, Founder, President) in your positions/projects. If you have leadership experience not flagged by these keywords, ensure they are prominently described.",
+        "source": {
+          "url": "https://strategycase.com/consulting-resume/",
+          "note": "Leadership evidence is one of the three primary dimensions evaluated on MBB resumes."
+        }
+      }
+    ],
+    "overrides": {
+      "stu-quantify": {
+        "disabled": true
+      }
+    },
+    "searchKeywords": [
+      {
+        "term": "market research",
+        "aliases": [
+          "industry analysis",
+          "competitive landscape",
+          "benchmarking"
+        ]
+      },
+      {
+        "term": "financial analysis",
+        "aliases": [
+          "business valuation",
+          "budgeting",
+          "financial modeling",
+          "excel"
+        ]
+      },
+      {
+        "term": "problem solving",
+        "aliases": [
+          "case study",
+          "structured analysis",
+          "frameworks",
+          "data-driven"
+        ]
+      },
+      {
+        "term": "client relations",
+        "aliases": [
+          "stakeholder management",
+          "presentation",
+          "powerpoint",
+          "client-facing"
+        ]
+      },
+      {
+        "term": "Agile",
+        "aliases": [
+          "scrum",
+          "project management",
+          "coordination"
+        ]
+      },
+      {
+        "term": "Excel",
+        "aliases": [
+          "spreadsheets",
+          "data analysis",
+          "modeling"
+        ]
+      },
+      {
+        "term": "PowerPoint",
+        "aliases": [
+          "slides",
+          "presentation",
+          "deck"
+        ]
+      }
+    ]
+  },
+  "role/data-analyst": {
+    "pack": "role/data-analyst",
+    "kind": "role",
+    "name": "Data Analyst",
+    "version": "0.1.0",
+    "rules": [
+      {
+        "id": "da-sql-required",
+        "title": "Add SQL to your skills — it is the primary data analyst tool",
+        "layer": "context",
+        "priority": "P0",
+        "check": "skills-keywords-missing",
+        "params": {
+          "anyOf": [
+            "sql"
+          ],
+          "match": "substring",
+          "label": "SQL"
+        },
+        "why": "SQL is the industry-standard database query language; almost all data analyst positions list it as a core requirement.",
+        "source": {
+          "url": "https://www.coursera.org/articles/data-analyst-resume",
+          "note": "SQL is the most requested skill in data analyst job listings"
+        }
+      },
+      {
+        "id": "da-visualization-required",
+        "title": "Include data visualization tools (Tableau, Power BI)",
+        "layer": "context",
+        "priority": "P1",
+        "check": "skills-keywords-missing",
+        "params": {
+          "anyOf": [
+            "tableau",
+            "power bi",
+            "powerbi",
+            "qlik",
+            "looker",
+            "visualization"
+          ],
+          "match": "exact",
+          "label": "visualization tools (Tableau, Power BI, ...)"
+        },
+        "why": "Data analysts must translate raw data into actionable dashboards and visualizations; listing Tableau, Power BI, Looker, or Qlik demonstrates this capability.",
+        "source": {
+          "url": "https://www.coursera.org/articles/data-analyst-resume",
+          "note": "Data visualization tool proficiency is a standard requirement for analyst positions"
+        }
+      }
+    ],
+    "overrides": {},
+    "searchKeywords": [
+      {
+        "term": "SQL",
+        "aliases": [
+          "database",
+          "relational database",
+          "queries",
+          "querying"
+        ]
+      },
+      {
+        "term": "Tableau",
+        "aliases": [
+          "data visualization",
+          "visualization"
+        ]
+      },
+      {
+        "term": "Power BI",
+        "aliases": [
+          "powerbi",
+          "dashboards",
+          "dashboarding"
+        ]
+      },
+      {
+        "term": "Python",
+        "aliases": [
+          "pandas",
+          "numpy",
+          "scikit-learn"
+        ]
+      },
+      {
+        "term": "Excel",
+        "aliases": [
+          "spreadsheets",
+          "advanced excel"
+        ]
+      },
+      {
+        "term": "ETL",
+        "aliases": [
+          "data pipeline",
+          "data integration"
+        ]
+      },
+      {
+        "term": "R",
+        "aliases": [
+          "statistical computing"
+        ]
+      },
+      {
+        "term": "statistics",
+        "aliases": [
+          "statistical analysis",
+          "regression",
+          "hypothesis testing"
+        ]
+      }
+    ]
+  },
+  "role/dv-engineer": {
+    "pack": "role/dv-engineer",
+    "kind": "role",
+    "name": "Design Verification Engineer",
+    "version": "0.1.0",
+    "rules": [
+      {
+        "id": "dv-lab-tools-required",
+        "title": "Mention SystemVerilog, UVM, or key VLSI tools and design/verification concepts",
+        "layer": "context",
+        "priority": "P0",
+        "check": "skills-keywords-missing",
+        "params": {
+          "anyOf": [
+            "systemverilog",
+            "verilog",
+            "vhdl",
+            "uvm",
+            "testbench",
+            "asic",
+            "rtl",
+            "fpga",
+            "synthesis",
+            "timing closure",
+            "dft",
+            "axi",
+            "apb",
+            "ahb",
+            "xcelium",
+            "simvision",
+            "design compiler",
+            "joules",
+            "vivado",
+            "vitis",
+            "questasim",
+            "modelsim",
+            "vcs",
+            "verdi"
+          ],
+          "match": "substring",
+          "label": "SystemVerilog, UVM, HDLs, or VLSI toolchains"
+        },
+        "why": "Design Verification and VLSI engineers must list specific digital design/verification toolchains, hardware description languages (SystemVerilog, Verilog, VHDL), verification methodologies (UVM), or simulation tools.",
+        "source": {
+          "url": "https://github.com/r-engineeringresumes/subreddit-wiki/blob/main/wiki/skills.md",
+          "note": "Hardware/VLSI engineers must list specific EDA tools, protocols, and HDLs."
+        }
+      },
+      {
+        "id": "dv-verification-methodology-recommended",
+        "title": "Mention verification methodologies or testbench design (e.g. UVM, SystemVerilog TB)",
+        "layer": "context",
+        "priority": "P1",
+        "check": "skills-keywords-missing",
+        "params": {
+          "anyOf": [
+            "uvm",
+            "testbench",
+            "tb",
+            "assertion",
+            "sva",
+            "coverage",
+            "functional verification",
+            "ovm",
+            "systemverilog testbench"
+          ],
+          "match": "substring",
+          "label": "verification methodologies (UVM/testbench)"
+        },
+        "why": "Verification engineers must demonstrate familiarity with structured verification methodologies (like UVM), writing testbenches, assertions (SVA), or coverage metrics.",
+        "source": {
+          "url": "https://github.com/r-engineeringresumes/subreddit-wiki/blob/main/wiki/index.md",
+          "note": "Verification-focused roles look for exposure to simulation, coverage, and testbench structures."
+        }
+      },
+      {
+        "id": "dv-synthesis-simulation-tools-recommended",
+        "title": "Specify logic synthesis or EDA simulation tools (e.g., Design Compiler, Xcelium, Vivado)",
+        "layer": "context",
+        "priority": "P1",
+        "check": "skills-keywords-missing",
+        "params": {
+          "anyOf": [
+            "design compiler",
+            "synopsys",
+            "cadence",
+            "xcelium",
+            "simvision",
+            "joules",
+            "vivado",
+            "vitis",
+            "vcs",
+            "verdi",
+            "questasim"
+          ],
+          "match": "substring",
+          "label": "synthesis/simulation toolchains"
+        },
+        "why": "Silicon development roles require familiarity with industry-standard EDA tools for design simulation, power profiling (Joules), synthesis (Design Compiler), or FPGA implementation (Vivado).",
+        "source": {
+          "url": "https://github.com/r-engineeringresumes/subreddit-wiki/blob/main/wiki/index.md",
+          "note": "Demonstrating competence in Cadence, Synopsys, or Xilinx toolsuites is standard for VLSI hardware engineers."
+        }
+      },
+      {
+        "id": "dv-projects-required",
+        "title": "Add a Projects section to showcase hardware design or verification experience",
+        "layer": "context",
+        "priority": "P0",
+        "check": "projects-missing",
+        "params": {},
+        "why": "Hands-on hardware or software projects (e.g. custom accelerators, verification testbenches, FPGA beamformers) are essential proof of engineering competence.",
+        "source": {
+          "url": "https://github.com/r-engineeringresumes/subreddit-wiki/blob/main/wiki/index.md",
+          "note": "Projects are a mandatory section to showcase hardware design and problem-solving capability."
+        }
+      },
+      {
+        "id": "dv-work-experience-recommended",
+        "title": "Emphasize previous silicon internships, co-ops, or design verification work experience",
+        "layer": "context",
+        "priority": "P1",
+        "check": "work-missing",
+        "params": {},
+        "why": "Relevant internships, co-ops, or professional verification roles are highly valued in the semiconductor industry. Ensure you have a work experience section.",
+        "source": {
+          "url": "https://github.com/r-engineeringresumes/subreddit-wiki/blob/main/wiki/index.md",
+          "note": "Practical engineering experience is the most heavily weighted component of the resume."
+        }
+      }
+    ],
+    "overrides": {},
+    "searchKeywords": [
+      {
+        "term": "SystemVerilog",
+        "aliases": [
+          "Verilog",
+          "VHDL",
+          "System Verilog",
+          "digital design",
+          "RTL"
+        ]
+      },
+      {
+        "term": "UVM",
+        "aliases": [
+          "Universal Verification Methodology",
+          "OVM",
+          "testbench",
+          "testbenches",
+          "assertions",
+          "SVA",
+          "functional verification",
+          "coverage"
+        ]
+      },
+      {
+        "term": "EDA Tools",
+        "aliases": [
+          "Xcelium",
+          "SimVision",
+          "Joules",
+          "Design Compiler",
+          "Vivado",
+          "Synopsys",
+          "Cadence",
+          "VCS",
+          "Verdi",
+          "Questa",
+          "ModelSim"
+        ]
+      },
+      {
+        "term": "Protocols",
+        "aliases": [
+          "AXI4",
+          "AXI5",
+          "APB",
+          "SPI",
+          "I3C",
+          "AXI",
+          "AMBA",
+          "AHB"
+        ]
+      },
+      {
+        "term": "synthesis",
+        "aliases": [
+          "logic synthesis",
+          "timing closure",
+          "static timing analysis",
+          "STA",
+          "DFT",
+          "gate-count"
+        ]
+      }
+    ]
+  },
+  "role/ee-intern": {
+    "pack": "role/ee-intern",
+    "kind": "role",
+    "name": "Electrical Engineering Intern",
+    "version": "0.1.0",
+    "rules": [
+      {
+        "id": "ee-lab-pcb-hdl-required",
+        "title": "Mention PCB design, HDL, or electrical laboratory skills",
+        "layer": "context",
+        "priority": "P0",
+        "check": "skills-keywords-missing",
+        "params": {
+          "anyOf": [
+            "altium",
+            "eagle",
+            "orcad",
+            "kicad",
+            "pcb",
+            "fpga",
+            "verilog",
+            "vhdl",
+            "spice",
+            "ltspice",
+            "oscilloscope",
+            "soldering",
+            "multimeter",
+            "microcontroller",
+            "arduino",
+            "raspberry pi"
+          ],
+          "match": "substring",
+          "label": "PCB design, HDL, or lab tools"
+        },
+        "why": "Electrical engineering candidates must demonstrate tool proficiency in PCB design (Altium, KiCad), HDLs (Verilog, VHDL), circuit simulation (SPICE), or laboratory test equipment (oscilloscopes).",
+        "source": {
+          "url": "https://github.com/r-engineeringresumes/subreddit-wiki/blob/main/wiki/skills.md",
+          "note": "Electrical engineers must list specific lab equipment and software toolchains."
+        }
+      },
+      {
+        "id": "ee-fe-eit-recommended",
+        "title": "List FE Exam or EIT status (US engineering roles)",
+        "layer": "context",
+        "priority": "P2",
+        "check": "certifications-missing",
+        "params": {
+          "orSkillKeywords": [
+            "fe",
+            "eit",
+            "fundamentals of engineering",
+            "engineer-in-training"
+          ]
+        },
+        "why": "Passing the Fundamentals of Engineering (FE) exam is highly valued for US electrical engineering candidates aiming for power systems, MEP, or utility engineering careers.",
+        "source": {
+          "url": "https://github.com/r-engineeringresumes/subreddit-wiki/blob/main/wiki/index.md",
+          "note": "FE/EIT status is standard professional registration preparation for US engineering positions."
+        }
+      },
+      {
+        "id": "ee-projects-required",
+        "title": "Add a Projects section to showcase engineering design experience",
+        "layer": "context",
+        "priority": "P0",
+        "check": "projects-missing",
+        "params": {},
+        "why": "Hands-on hardware or software projects (e.g. PCB layouts, microcontrollers, tapeouts) are critical proof of engineering competence for students.",
+        "source": {
+          "url": "https://github.com/r-engineeringresumes/subreddit-wiki/blob/main/wiki/index.md",
+          "note": "Projects are a mandatory section to showcase engineering and problem-solving capability."
+        }
+      },
+      {
+        "id": "ee-work-experience-recommended",
+        "title": "Emphasize previous co-ops, internships, or engineering work experience",
+        "layer": "context",
+        "priority": "P1",
+        "check": "work-missing",
+        "params": {},
+        "why": "Relevant co-ops, internships, or technical work experience are highly valued by electrical engineering recruiters. Ensure you have a work experience section.",
+        "source": {
+          "url": "https://github.com/r-engineeringresumes/subreddit-wiki/blob/main/wiki/index.md",
+          "note": "Practical engineering experience is the most heavily weighted component of the resume."
+        }
+      }
+    ],
+    "overrides": {},
+    "searchKeywords": [
+      {
+        "term": "PCB design",
+        "aliases": [
+          "Altium",
+          "Eagle",
+          "KiCad",
+          "schematic capture",
+          "printed circuit board",
+          "layout"
+        ]
+      },
+      {
+        "term": "Verilog",
+        "aliases": [
+          "VHDL",
+          "SystemVerilog",
+          "FPGA",
+          "RTL",
+          "digital design"
+        ]
+      },
+      {
+        "term": "MATLAB",
+        "aliases": [
+          "Simulink"
+        ]
+      },
+      {
+        "term": "lab equipment",
+        "aliases": [
+          "oscilloscope",
+          "multimeter",
+          "logic analyzer",
+          "soldering",
+          "spectrum analyzer"
+        ]
+      },
+      {
+        "term": "microcontrollers",
+        "aliases": [
+          "Arduino",
+          "STM32",
+          "ESP32",
+          "microcontroller",
+          "embedded C",
+          "firmware",
+          "PIC"
+        ]
+      },
+      {
+        "term": "SPICE",
+        "aliases": [
+          "LTspice",
+          "HSpice",
+          "circuit simulation",
+          "PSpice"
+        ]
+      }
+    ]
+  },
+  "role/finance-analyst": {
+    "pack": "role/finance-analyst",
+    "kind": "role",
+    "name": "Financial Analyst",
+    "version": "0.1.0",
+    "rules": [
+      {
+        "id": "fa-gpa-required",
+        "title": "Add your GPA (essential for finance recruiting screens)",
+        "layer": "context",
+        "priority": "P0",
+        "check": "gpa-missing",
+        "params": {},
+        "why": "Finance recruiters use academic GPA as a primary filtering metric for internships and new-grad entry roles. Omitting it completely is a red flag.",
+        "source": {
+          "url": "https://corporatefinanceinstitute.com/resources/career-map/resume/financial-analyst-resume/",
+          "note": "GPA is a mandatory field for entry-level financial analyst resumes"
+        }
+      },
+      {
+        "id": "fa-excel-modeling-required",
+        "title": "Highlight Advanced Excel or Financial Modeling skills",
+        "layer": "context",
+        "priority": "P0",
+        "check": "skills-keywords-missing",
+        "params": {
+          "anyOf": [
+            "excel",
+            "modeling",
+            "valuation",
+            "dcf",
+            "lbo"
+          ],
+          "match": "substring",
+          "label": "Excel or financial modeling"
+        },
+        "why": "Practical finance relies on spreadsheets and models; you must explicitly list Excel, financial modeling, valuation, or DCF in your skills to pass screening keyword checks.",
+        "source": {
+          "url": "https://corporatefinanceinstitute.com/resources/career-map/resume/financial-analyst-resume/",
+          "note": "Excel and modeling are core technical requirements"
+        }
+      },
+      {
+        "id": "fa-certifications-recommended",
+        "title": "Mention relevant finance certifications (e.g., CFA, Bloomberg)",
+        "layer": "context",
+        "priority": "P2",
+        "check": "certifications-missing",
+        "params": {
+          "orSkillKeywords": [
+            "cfa",
+            "bloomberg",
+            "cfi",
+            "fmpa",
+            "nism",
+            "ncfm"
+          ]
+        },
+        "why": "Finance certifications like CFA Level I or Bloomberg Terminal certifications show industry knowledge and self-directed preparation.",
+        "source": {
+          "url": "https://corporatefinanceinstitute.com/resources/career-map/resume/financial-analyst-resume/",
+          "note": "Certifications showcase dedication and baseline technical skills"
+        }
+      }
+    ],
+    "overrides": {},
+    "searchKeywords": [
+      {
+        "term": "corporate finance",
+        "aliases": [
+          "financial planning",
+          "forecasting",
+          "budgeting",
+          "fp&a"
+        ]
+      },
+      {
+        "term": "Excel",
+        "aliases": [
+          "spreadsheets",
+          "financial modeling",
+          "vlookup",
+          "pivot tables"
+        ]
+      },
+      {
+        "term": "accounting",
+        "aliases": [
+          "gaap",
+          "general ledger",
+          "reconciliations"
+        ]
+      },
+      {
+        "term": "SQL",
+        "aliases": [
+          "query",
+          "database",
+          "databases"
+        ]
+      },
+      {
+        "term": "financial analysis",
+        "aliases": [
+          "variance analysis",
+          "cost analysis",
+          "ratio analysis"
+        ]
+      },
+      {
+        "term": "Tableau",
+        "aliases": [
+          "dashboarding",
+          "data visualization",
+          "visualization",
+          "reporting"
+        ]
+      }
+    ]
+  },
+  "role/ib-analyst": {
+    "pack": "role/ib-analyst",
+    "kind": "role",
+    "name": "Investment Banking Analyst",
+    "version": "0.1.0",
+    "rules": [
+      {
+        "id": "ib-quantify-bullets",
+        "title": "Quantify a higher percentage of your experience and project bullets",
+        "layer": "context",
+        "priority": "P0",
+        "check": "unquantified-highlights",
+        "params": {
+          "minRatio": 0.3
+        },
+        "why": "Investment banking recruiters expect a very high density of numbers in resume bullets (specifically transaction sizes in dollars, growth rates, and margins). At least 70% of your highlights should contain numbers.",
+        "source": {
+          "url": "https://mergersandinquisitions.com/free-investment-banking-resume-template/",
+          "note": "IB bullets must be highly quantified with transaction values and metrics."
+        }
+      },
+      {
+        "id": "ib-excel-modeling-required",
+        "title": "Highlight Excel and financial modeling skills",
+        "layer": "context",
+        "priority": "P0",
+        "check": "skills-keywords-missing",
+        "params": {
+          "anyOf": [
+            "excel",
+            "modeling",
+            "valuation",
+            "dcf",
+            "lbo",
+            "m&a"
+          ],
+          "match": "substring",
+          "label": "Excel or financial modeling"
+        },
+        "why": "Excel and financial modeling (DCF, LBO, M&A) are core technical competencies for investment banking analyst recruits. Listing them explicitly is necessary to pass screens.",
+        "source": {
+          "url": "https://www.wallstreetoasis.com/resources/templates/word-templates/investment-banking-resume-template",
+          "note": "Advanced Excel and modeling proficiency is a baseline requirement."
+        }
+      },
+      {
+        "id": "ib-certifications-recommended",
+        "title": "Mention relevant finance certifications (e.g., CFA, Bloomberg)",
+        "layer": "context",
+        "priority": "P2",
+        "check": "certifications-missing",
+        "params": {
+          "orSkillKeywords": [
+            "cfa",
+            "bloomberg",
+            "cfi",
+            "fmpa",
+            "nism",
+            "ncfm"
+          ]
+        },
+        "why": "Finance-specific certifications like the CFA Level I candidate status or Bloomberg Market Concepts (BMC) show commitment to financial markets and enhance early-career credibility.",
+        "source": {
+          "url": "https://corporatefinanceinstitute.com/resources/career/investment-banking-resume/",
+          "note": "Financial certifications validate analytical skills and industry interest."
+        }
+      }
+    ],
+    "overrides": {
+      "stu-quantify": {
+        "disabled": true
+      }
+    },
+    "searchKeywords": [
+      {
+        "term": "financial modeling",
+        "aliases": [
+          "dcf",
+          "lbo",
+          "valuation",
+          "financial analysis"
+        ]
+      },
+      {
+        "term": "Excel",
+        "aliases": [
+          "spreadsheets",
+          "financial modeling",
+          "vlookup"
+        ]
+      },
+      {
+        "term": "M&A",
+        "aliases": [
+          "mergers and acquisitions",
+          "buy-side",
+          "sell-side",
+          "transactions"
+        ]
+      },
+      {
+        "term": "due diligence",
+        "aliases": [
+          "transaction services",
+          "deal review"
+        ]
+      },
+      {
+        "term": "PowerPoint",
+        "aliases": [
+          "deck",
+          "pitch book",
+          "presentation"
+        ]
+      },
+      {
+        "term": "accounting",
+        "aliases": [
+          "financial statements",
+          "balance sheet",
+          "cash flow"
+        ]
+      },
+      {
+        "term": "CFA",
+        "aliases": [
+          "chartered financial analyst"
+        ]
+      }
+    ]
+  },
+  "role/mba-applicant": {
+    "pack": "role/mba-applicant",
+    "kind": "role",
+    "name": "MBA Applicant",
+    "version": "0.1.0",
+    "rules": [
+      {
+        "id": "mba-quantify-business-impact",
+        "title": "Quantify your business impact using %, $, or scale metrics",
+        "layer": "context",
+        "priority": "P0",
+        "check": "quantify-business-impact",
+        "params": {},
+        "why": "MBA admissions committees look for quantified results (revenue, costs, percentages, team size) to gauge the scale and significance of your achievements, rather than a list of tasks.",
+        "source": {
+          "url": "https://stacyblackman.com/mba-resume-guide/",
+          "note": "Stacy Blackman recommends quantifying every accomplishment with percentages, numbers, or dollars."
+        }
+      },
+      {
+        "id": "mba-leadership-scope-required",
+        "title": "Demonstrate explicit leadership scope or management evidence",
+        "layer": "context",
+        "priority": "P0",
+        "check": "leadership-scope-required",
+        "params": {},
+        "why": "Leadership potential is the single most important dimension evaluated by MBA admissions screeners. Your resume must contain explicit evidence of leadership, initiative, team coordination, or project stewardship.",
+        "source": {
+          "url": "https://menlocoaching.com/mba-applications/mba-resume/",
+          "note": "Top-tier MBA programs filter candidates heavily on proven leadership experience and scope."
+        }
+      },
+      {
+        "id": "mba-career-progression-recommended",
+        "title": "Highlight career progression and promotions",
+        "layer": "context",
+        "priority": "P1",
+        "check": "career-progression-recommended",
+        "params": {},
+        "why": "MBA admissions look for candidates with a trajectory of career growth and increasing responsibility. This check highlights if there is no clear evidence of title progression or promotions.",
+        "source": {
+          "url": "https://www.mba.com/explore-mba-programs/enroll/application-prep/how-to-write-an-mba-resume",
+          "note": "Showcase promotions or logical progression of titles to prove your trajectory of growth."
+        }
+      },
+      {
+        "id": "mba-extracurricular-impact-recommended",
+        "title": "Show extracurricular involvement and community impact",
+        "layer": "context",
+        "priority": "P1",
+        "check": "extracurricular-impact-recommended",
+        "params": {},
+        "why": "MBA programs value candidates who contribute outside their professional jobs. Extracurricular activities, volunteer work, or club leadership demonstrate well-roundedness and community initiative.",
+        "source": {
+          "url": "https://stacyblackman.com/mba-resume-guide/",
+          "note": "Active extracurricular and community involvement is highly weighted by admissions boards."
+        }
+      }
+    ],
+    "overrides": {
+      "stu-quantify": {
+        "disabled": true
+      },
+      "leadership-missing": {
+        "disabled": true
+      }
+    },
+    "searchKeywords": [
+      {
+        "term": "leadership",
+        "aliases": [
+          "led",
+          "managed",
+          "spearheaded",
+          "directed",
+          "supervised",
+          "president",
+          "founder",
+          "chairman",
+          "captain"
+        ]
+      },
+      {
+        "term": "business impact",
+        "aliases": [
+          "P&L",
+          "revenue",
+          "profit",
+          "budget",
+          "headcount",
+          "ROI",
+          "KPI",
+          "KPIs",
+          "sales",
+          "margin"
+        ]
+      },
+      {
+        "term": "strategy",
+        "aliases": [
+          "cross-functional",
+          "scaled",
+          "launched",
+          "negotiated",
+          "growth",
+          "optimization",
+          "transformation"
+        ]
+      },
+      {
+        "term": "management",
+        "aliases": [
+          "stakeholders",
+          "clients",
+          "customers",
+          "operations",
+          "project management",
+          "budgeting"
+        ]
+      }
+    ]
+  },
+  "role/mech-engineer-intern": {
+    "pack": "role/mech-engineer-intern",
+    "kind": "role",
+    "name": "Mechanical Engineering Intern",
+    "version": "0.1.0",
+    "rules": [
+      {
+        "id": "mech-cad-fea-required",
+        "title": "Mention CAD, FEA, or mechanical engineering design tools",
+        "layer": "context",
+        "priority": "P0",
+        "check": "skills-keywords-missing",
+        "params": {
+          "anyOf": [
+            "solidworks",
+            "autocad",
+            "inventor",
+            "creo",
+            "catia",
+            "fusion 360",
+            "ansys",
+            "abaqus",
+            "nastran",
+            "fea",
+            "fem",
+            "matlab",
+            "labview"
+          ],
+          "match": "substring",
+          "label": "CAD, FEA, or engineering toolchain"
+        },
+        "why": "Mechanical engineering internships expect familiarity with standard design and simulation tools. Listing CAD/FEA software is critical to pass core technical screens.",
+        "source": {
+          "url": "https://github.com/r-engineeringresumes/subreddit-wiki/blob/main/wiki/skills.md",
+          "note": "Mechanical engineering resumes must list core software tools like CAD/FEA."
+        }
+      },
+      {
+        "id": "mech-fe-eit-recommended",
+        "title": "List FE Exam or EIT status (US engineering roles)",
+        "layer": "context",
+        "priority": "P2",
+        "check": "certifications-missing",
+        "params": {
+          "orSkillKeywords": [
+            "fe",
+            "eit",
+            "fundamentals of engineering",
+            "engineer-in-training"
+          ]
+        },
+        "why": "Passing the Fundamentals of Engineering (FE) exam to earn EIT status is a standard professional milestone for mechanical engineers in the US, showing intent to pursue PE licensing.",
+        "source": {
+          "url": "https://github.com/r-engineeringresumes/subreddit-wiki/blob/main/wiki/index.md",
+          "note": "FE exam or EIT certification is highly valued for US entry-level engineering roles."
+        }
+      },
+      {
+        "id": "mech-projects-required",
+        "title": "Add a Projects section to showcase engineering design experience",
+        "layer": "context",
+        "priority": "P0",
+        "check": "projects-missing",
+        "params": {},
+        "why": "Engineering candidates must show hand-on design, analysis, and fabrication experience. A structured projects section is a mandatory component.",
+        "source": {
+          "url": "https://github.com/r-engineeringresumes/subreddit-wiki/blob/main/wiki/index.md",
+          "note": "Academic or personal engineering projects are essential to demonstrate hands-on competence."
+        }
+      },
+      {
+        "id": "mech-work-experience-recommended",
+        "title": "Emphasize previous co-ops, internships, or engineering work experience",
+        "layer": "context",
+        "priority": "P1",
+        "check": "work-missing",
+        "params": {},
+        "why": "Co-op and internship experiences are the single most heavily weighted factor in hiring new graduates. Ensure you have a work experience section listing your engineering experience.",
+        "source": {
+          "url": "https://github.com/r-engineeringresumes/subreddit-wiki/blob/main/wiki/index.md",
+          "note": "Work experience in engineering, co-ops, or internships is preferred above all else."
+        }
+      }
+    ],
+    "overrides": {},
+    "searchKeywords": [
+      {
+        "term": "CAD",
+        "aliases": [
+          "SolidWorks",
+          "AutoCAD",
+          "Inventor",
+          "Creo",
+          "CATIA",
+          "Fusion 360",
+          "computer-aided design"
+        ]
+      },
+      {
+        "term": "FEA",
+        "aliases": [
+          "ANSYS",
+          "Abaqus",
+          "Nastran",
+          "finite element analysis",
+          "stress analysis",
+          "simulation"
+        ]
+      },
+      {
+        "term": "prototyping",
+        "aliases": [
+          "3D printing",
+          "machining",
+          "fabrication",
+          "workshop",
+          "rapid prototyping"
+        ]
+      },
+      {
+        "term": "GD&T",
+        "aliases": [
+          "geometric dimensioning and tolerancing",
+          "engineering drawings",
+          "tolerancing"
+        ]
+      },
+      {
+        "term": "thermodynamics",
+        "aliases": [
+          "heat transfer",
+          "fluid mechanics",
+          "thermal analysis"
+        ]
+      },
+      {
+        "term": "MATLAB",
+        "aliases": [
+          "simulation",
+          "numerical analysis",
+          "LabVIEW"
+        ]
+      }
+    ]
+  },
+  "role/product-manager": {
+    "pack": "role/product-manager",
+    "kind": "role",
+    "name": "Product Manager",
+    "version": "0.1.0",
+    "rules": [
+      {
+        "id": "pm-outcome-metrics",
+        "title": "Quantify your product outcomes using user and business metrics",
+        "layer": "context",
+        "priority": "P0",
+        "check": "quantify-business-impact",
+        "params": {
+          "minRatio": 0.3
+        },
+        "why": "Product Managers are evaluated on their ability to drive business and user outcomes (e.g. conversion rates, retention, DAU/MAU, user growth) rather than just listing shipped features or tasks.",
+        "source": {
+          "url": "https://www.tryexponent.com/blog/product-manager-resume",
+          "note": "Exponent highlights that PM resumes must treat accomplishments as products and measure outcomes using user/business metrics rather than listing responsibilities."
+        }
+      },
+      {
+        "id": "pm-user-evidence",
+        "title": "Demonstrate user research, interviews, or experimentation",
+        "layer": "context",
+        "priority": "P1",
+        "check": "highlights-keywords-missing",
+        "params": {
+          "anyOf": [
+            "user research",
+            "user interviews",
+            "A/B testing",
+            "A/B test",
+            "experiment",
+            "experiments",
+            "usability testing",
+            "usability test",
+            "personas",
+            "telemetry"
+          ],
+          "label": "user research or experimentation"
+        },
+        "why": "Strong product managers ground their decisions in customer insight and data. Evidence of user interviews, usability testing, A/B testing, or data experiments proves user empathy and structured product discovery.",
+        "source": {
+          "url": "https://www.lennysnewsletter.com/p/pm-resumes",
+          "note": "Lenny's Newsletter emphasizes that demonstrating customer empathy and data-informed decision-making (e.g. A/B testing, user research) is key to standing out as a PM."
+        }
+      },
+      {
+        "id": "pm-cross-functional-scope",
+        "title": "Showcase cross-functional collaboration and stakeholder alignment",
+        "layer": "context",
+        "priority": "P1",
+        "check": "highlights-keywords-missing",
+        "params": {
+          "anyOf": [
+            "cross-functional",
+            "cross functional",
+            "stakeholders",
+            "stakeholder alignment",
+            "stakeholder management",
+            "alignment",
+            "collaborated with",
+            "partnered with",
+            "engineers",
+            "designers",
+            "marketers",
+            "developers"
+          ],
+          "label": "cross-functional coordination"
+        },
+        "why": "Product management is inherently collaborative and requires leading without authority. Describing collaboration across engineering, design, marketing, or business teams is critical.",
+        "source": {
+          "url": "https://www.tryexponent.com/blog/product-manager-resume",
+          "note": "PMs operate at the intersection of business, design, and engineering, and must show clear evidence of driving cross-functional alignment."
+        }
+      }
+    ],
+    "overrides": {
+      "stu-quantify": {
+        "disabled": true
+      }
+    },
+    "searchKeywords": [
+      {
+        "term": "product management",
+        "aliases": [
+          "product manager",
+          "product owner",
+          "roadmap",
+          "PRD",
+          "product specifications",
+          "product lifecycle"
+        ]
+      },
+      {
+        "term": "user research",
+        "aliases": [
+          "user interviews",
+          "usability testing",
+          "user feedback",
+          "personas",
+          "telemetry",
+          "customer research"
+        ]
+      },
+      {
+        "term": "metrics & analytics",
+        "aliases": [
+          "A/B testing",
+          "experimentation",
+          "retention",
+          "conversion",
+          "DAU",
+          "MAU",
+          "NPS",
+          "SQL",
+          "Mixpanel",
+          "Amplitude",
+          "Google Analytics"
+        ]
+      },
+      {
+        "term": "cross-functional coordination",
+        "aliases": [
+          "cross-functional",
+          "stakeholder management",
+          "engineering alignment",
+          "agile",
+          "scrum",
+          "product launch",
+          "GTM"
+        ]
+      }
+    ]
+  },
+  "role/swe-intern": {
+    "pack": "role/swe-intern",
+    "kind": "role",
+    "name": "Software Engineering Intern",
+    "version": "0.1.0",
+    "rules": [
+      {
+        "id": "swe-projects-required",
+        "title": "Add a Projects section — it carries a student SWE resume",
+        "layer": "context",
+        "priority": "P0",
+        "check": "projects-missing",
+        "params": {},
+        "why": "With little work history, projects are the main evidence of engineering ability; recruiter-side tools (e.g. HackerRank's hiring-agent) score personal projects and open-source work directly.",
+        "source": {
+          "url": "https://github.com/interviewstreet/hiring-agent",
+          "note": "recruiter-side evaluator scores projects/OSS as primary dimensions"
+        }
+      },
+      {
+        "id": "swe-github-link",
+        "title": "Add your GitHub profile link",
+        "layer": "context",
+        "priority": "P1",
+        "check": "github-missing",
+        "params": {},
+        "why": "SWE recruiters and automated evaluators look for a GitHub link to verify project claims; its absence removes your cheapest credibility signal.",
+        "source": {
+          "url": "https://github.com/interviewstreet/hiring-agent",
+          "note": "GitHub enrichment is a core stage of recruiter-side evaluation"
+        }
+      },
+      {
+        "id": "swe-project-links",
+        "title": "Link each project to its code or demo",
+        "layer": "context",
+        "priority": "P2",
+        "check": "projects-unlinked",
+        "params": {},
+        "why": "An unlinked project claim can't be verified; a link turns an assertion into evidence.",
+        "source": {
+          "url": "https://github.com/interviewstreet/hiring-agent",
+          "note": "project verification requires repository links"
+        }
+      }
+    ],
+    "overrides": {},
+    "searchKeywords": [
+      {
+        "term": "data structures",
+        "aliases": [
+          "algorithms"
+        ]
+      },
+      {
+        "term": "REST API",
+        "aliases": [
+          "REST",
+          "API",
+          "web service"
+        ]
+      },
+      {
+        "term": "SQL",
+        "aliases": [
+          "database",
+          "PostgreSQL",
+          "MySQL"
+        ]
+      },
+      {
+        "term": "Git",
+        "aliases": [
+          "version control",
+          "GitHub"
+        ]
+      },
+      {
+        "term": "unit testing",
+        "aliases": [
+          "testing",
+          "test coverage"
+        ]
+      },
+      {
+        "term": "CI/CD",
+        "aliases": [
+          "continuous integration",
+          "continuous deployment"
+        ]
+      },
+      {
+        "term": "Docker",
+        "aliases": [
+          "containers",
+          "containerization"
+        ]
+      },
+      {
+        "term": "cloud",
+        "aliases": [
+          "AWS",
+          "Azure",
+          "GCP"
+        ]
+      }
+    ]
+  },
+  "stage/student": {
+    "pack": "stage/student",
+    "kind": "stage",
+    "name": "Student / New Graduate",
+    "version": "0.1.0",
+    "rules": [
+      {
+        "id": "stu-gpa",
+        "title": "Consider adding your GPA (if 3.0+/4.0 or equivalent)",
+        "layer": "context",
+        "priority": "P2",
+        "check": "gpa-missing",
+        "params": {},
+        "why": "Early-career screeners often filter on GPA; omitting it when it's decent makes you look like you're hiding it. Skip only if it's genuinely low.",
+        "source": {
+          "url": "https://www.jobscan.co/blog/jobscan-vs-resume-worded/",
+          "note": "education-level and GPA checks are standard early-career screens"
+        }
+      },
+      {
+        "id": "stu-coursework",
+        "title": "List relevant coursework under education",
+        "layer": "context",
+        "priority": "P2",
+        "check": "coursework-missing",
+        "params": {},
+        "why": "For students, coursework is searchable keyword surface and evidence of exposure recruiters can't get from an empty work history.",
+        "source": {
+          "url": "https://elevate.iit.edu/resources/how-do-resumes-differ-from-country-to-country/",
+          "note": "early-career resumes lean on education detail"
+        }
+      },
+      {
+        "id": "stu-quantify",
+        "title": "Quantify your bullet points",
+        "layer": "impact",
+        "priority": "P1",
+        "check": "unquantified-highlights",
+        "params": {
+          "minRatio": 0.7
+        },
+        "why": "Bullets without numbers state duties, not outcomes. \"Reduced p95 latency 40%\" survives the 6-second skim; \"worked on backend\" does not.",
+        "source": {
+          "url": "https://thetechresume.com/samples/ats-myths-busted",
+          "note": "human skim, not ATS auto-rejection, is what kills weak bullets"
+        }
+      },
+      {
+        "id": "stu-certificates-unlinked",
+        "title": "Link each certification to its verification URL",
+        "layer": "context",
+        "priority": "P2",
+        "check": "certificates-unlinked",
+        "params": {},
+        "why": "Unlinked certifications are harder for recruiters to verify. Adding a verification link (e.g. from Google, Microsoft, Coursera, Udemy, Bloomberg, or Credly) provides immediate proof of your credential.",
+        "source": {
+          "url": "https://www.topcv.io/blog/how-to-list-certifications-on-a-resume",
+          "note": "List the name of the certification, the authority, date, and a link to verify it."
+        }
+      }
+    ],
+    "overrides": {},
+    "searchKeywords": []
+  }
+}

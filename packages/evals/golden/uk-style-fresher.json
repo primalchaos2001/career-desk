@@ -1,0 +1,53 @@
+{
+  "basics": {
+    "name": "Liam Davies",
+    "email": "student@example.ac.uk",
+    "profiles": [
+      {
+        "network": "GitHub",
+        "url": "https://github.com/student"
+      }
+    ]
+  },
+  "work": [],
+  "education": [
+    {
+      "institution": "University of Oxford",
+      "area": "Computer Science",
+      "studyType": "B.A. (Hons)",
+      "startDate": "2022-10",
+      "endDate": "2025-06",
+      "score": "First Class Honours",
+      "coursework": ["Compilers", "Functional Programming"]
+    }
+  ],
+  "skills": [
+    {
+      "name": "Languages",
+      "keywords": ["Haskell", "OCaml", "C++"]
+    }
+  ],
+  "projects": [
+    {
+      "name": "compiler-lab",
+      "description": "Tiger language compiler in Haskell",
+      "highlights": ["Implemented register allocation algorithm saving 15% execution steps"],
+      "githubUrl": "https://github.com/student/compiler-lab"
+    }
+  ],
+  "awards": [],
+  "certificates": [],
+  "languages": [],
+  "meta": {
+    "sourceFormat": "builder",
+    "regionSignals": {
+      "hasPhoto": false,
+      "hasDateOfBirth": false,
+      "hasMaritalStatus": false,
+      "hasNationality": false,
+      "hasDeclarationLine": false,
+      "spellingVariant": "en-GB",
+      "pageCount": 2
+    }
+  }
+}

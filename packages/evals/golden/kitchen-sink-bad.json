@@ -1,0 +1,42 @@
+{
+  "basics": {
+    "name": "Vikram Rao",
+    "email": "student@example.edu",
+    "profiles": []
+  },
+  "work": [
+    {
+      "name": "College Fest",
+      "position": "Volunteer",
+      "highlights": ["managed logistics", "coordinated with vendors"]
+    }
+  ],
+  "education": [
+    {
+      "institution": "Example University",
+      "area": "CS"
+    }
+  ],
+  "skills": [
+    {
+      "name": "Languages",
+      "keywords": ["Python", "TypeScript"]
+    }
+  ],
+  "projects": [],
+  "awards": [],
+  "certificates": [],
+  "languages": [],
+  "meta": {
+    "sourceFormat": "builder",
+    "regionSignals": {
+      "hasPhoto": true,
+      "hasDateOfBirth": true,
+      "hasMaritalStatus": false,
+      "hasNationality": true,
+      "hasDeclarationLine": true,
+      "spellingVariant": "mixed",
+      "pageCount": 3
+    }
+  }
+}

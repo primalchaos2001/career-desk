@@ -1,0 +1,55 @@
+{
+  "basics": {
+    "name": "Lukas Müller",
+    "email": "student@example.de",
+    "profiles": [
+      {
+        "network": "GitHub",
+        "url": "https://github.com/student"
+      }
+    ]
+  },
+  "work": [],
+  "education": [
+    {
+      "institution": "Technical University of Munich",
+      "area": "Informatics",
+      "studyType": "B.Sc.",
+      "startDate": "2022-10",
+      "endDate": "2025-09",
+      "score": "1.3",
+      "coursework": ["Distributed Systems", "Software Engineering"]
+    }
+  ],
+  "skills": [
+    {
+      "name": "Languages",
+      "keywords": ["Go", "Java", "C++"]
+    }
+  ],
+  "projects": [
+    {
+      "name": "raft-consensus",
+      "description": "Raft consensus implementation in Go",
+      "highlights": [
+        "Designed a replicated state machine handling 5k requests/sec under network partitions"
+      ],
+      "githubUrl": "https://github.com/student/raft-consensus"
+    }
+  ],
+  "awards": [],
+  "certificates": [],
+  "languages": [],
+  "meta": {
+    "sourceFormat": "builder",
+    "regionSignals": {
+      "hasPhoto": true,
+      "hasDateOfBirth": true,
+      "hasMaritalStatus": false,
+      "hasNationality": false,
+      "hasDeclarationLine": false,
+      "spellingVariant": "en-GB",
+      "pageCount": 2
+    }
+  }
+}

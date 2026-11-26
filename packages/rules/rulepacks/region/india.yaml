@@ -1,0 +1,40 @@
+# Region pack: India
+# Sources gathered in docs/RESEARCH.md §4. Photo and personal details are
+# culturally acceptable in India, so this pack has no rules against them —
+# absence of a rule is itself a regional decision.
+pack: region/india
+kind: region
+name: India
+version: "0.1.0"
+rules:
+  - id: in-two-pages
+    title: Keep it under two pages
+    priority: P1
+    check: page-count-exceeds
+    params: { max: 2 }
+    why: >-
+      Indian resumes run longer than US ones, but campus recruiters and
+      off-campus portals still skim; past two pages you're hiding your best work.
+    source:
+      url: https://www.topcv.io/blog/resume-vs-cv-differences-by-country-2026
+      note: India commonly 2 pages for freshers
+
+  # D-044: India accepts BOTH conventions — British by heritage, American via
+  # the tech industry and US-bound applications. Only *mixing* them in one
+  # document reads as careless, so this fires on mixed, never on consistent
+  # en-US or en-GB.
+  - id: in-spelling
+    title: Use one English spelling variant consistently
+    priority: P2
+    check: spelling-mixed
+    why: >-
+      Indian résumés are written in both British and American English — either
+      is fine. Mixing en-US and en-GB spellings in the same document is what
+      reads as careless.
+    source:
+      url: https://resume.io/blog/international-resume-cv-writing
+      note: consistency within one spelling convention; India accepts either
+overrides:
+  # US professional-registration advice; not applicable outside the US (D-044)
+  ee-fe-eit-recommended:
+    disabled: true

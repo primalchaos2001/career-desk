@@ -1,0 +1,19 @@
+{
+  "name": "@tailorats/latex",
+  "version": "0.0.0",
+  "private": true,
+  "license": "MIT",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "typescript": "^5.8.0"
+  },
+  "dependencies": {
+    "@tailorats/core": "workspace:*"
+  }
+}

@@ -1,0 +1,27 @@
+name: Report a miss
+description: The report missed something a human flagged, or flagged something wrong
+labels: [miss, regression-candidate]
+body:
+  - type: input
+    id: context
+    attributes:
+      label: Context
+      placeholder: "us / swe-intern / student / v0.1.0"
+    validations:
+      required: true
+  - type: dropdown
+    id: kind
+    attributes:
+      label: Kind
+      options:
+        - Missed issue (a human reviewer/recruiter flagged something the report didn't)
+        - Wrong finding (the report flagged something a domain expert says is fine)
+    validations:
+      required: true
+  - type: textarea
+    id: details
+    attributes:
+      label: What happened
+      description: Describe the resume situation generically — no personal data. If you can, donate an anonymized fixture via the donation flow and link it here.
+    validations:
+      required: true

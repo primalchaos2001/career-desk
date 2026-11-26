@@ -1,0 +1,65 @@
+{
+  "basics": {
+    "name": "Maya Lin",
+    "email": "maya@example.com",
+    "profiles": []
+  },
+  "work": [
+    {
+      "name": "Software Startup",
+      "position": "Product Management Intern",
+      "startDate": "2025-06",
+      "endDate": "2025-08",
+      "highlights": [
+        "Led cross-functional team of 5 engineers to define product requirements, launching 2 new user search features",
+        "Conducted A/B testing on pricing models, resulting in a 14% increase in user conversion rates",
+        "Analyzed telemetry data of 20,000+ active users, identifying and prioritizing 4 core onboarding bottlenecks"
+      ]
+    }
+  ],
+  "education": [
+    {
+      "institution": "Stanford University",
+      "area": "Management Science & Engineering",
+      "studyType": "B.S.",
+      "startDate": "2022-09",
+      "endDate": "2026-06",
+      "gpa": {
+        "value": 3.7,
+        "scale": 4
+      },
+      "coursework": ["Product Design", "Decision Analysis"]
+    }
+  ],
+  "skills": [
+    {
+      "name": "Product Tools",
+      "keywords": ["SQL", "Figma", "Jira", "Mixpanel", "Python"]
+    }
+  ],
+  "projects": [
+    {
+      "name": "Campus RideShare App",
+      "description": "Carpooling network for Stanford students",
+      "highlights": [
+        "Designed user flows and mapped product roadmap, driving 800+ student registrations in 3 weeks",
+        "Conducted user interviews with 40 students to iterate on UX and drop-off rates"
+      ]
+    }
+  ],
+  "awards": [],
+  "certificates": [],
+  "languages": [],
+  "meta": {
+    "sourceFormat": "builder",
+    "regionSignals": {
+      "hasPhoto": false,
+      "hasDateOfBirth": false,
+      "hasMaritalStatus": false,
+      "hasNationality": false,
+      "hasDeclarationLine": false,
+      "spellingVariant": "en-US",
+      "pageCount": 1
+    }
+  }
+}

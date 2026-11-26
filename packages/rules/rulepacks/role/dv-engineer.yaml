@@ -1,0 +1,88 @@
+# Role pack: Design Verification / VLSI Engineer
+# Sourced from r/EngineeringResumes wiki standard + tracking ledger: 9 instances.
+pack: role/dv-engineer
+kind: role
+name: Design Verification Engineer
+version: "0.1.0"
+rules:
+  - id: dv-lab-tools-required
+    title: Mention SystemVerilog, UVM, or key VLSI tools and design/verification concepts
+    priority: P0
+    check: skills-keywords-missing
+    params:
+      anyOf: ["systemverilog", "verilog", "vhdl", "uvm", "testbench", "asic", "rtl", "fpga", "synthesis", "timing closure", "dft", "axi", "apb", "ahb", "xcelium", "simvision", "design compiler", "joules", "vivado", "vitis", "questasim", "modelsim", "vcs", "verdi"]
+      match: substring
+      label: "SystemVerilog, UVM, HDLs, or VLSI toolchains"
+    why: >-
+      Design Verification and VLSI engineers must list specific digital design/verification toolchains,
+      hardware description languages (SystemVerilog, Verilog, VHDL), verification methodologies (UVM),
+      or simulation tools.
+    source:
+      url: https://github.com/r-engineeringresumes/subreddit-wiki/blob/main/wiki/skills.md
+      note: Hardware/VLSI engineers must list specific EDA tools, protocols, and HDLs.
+
+  - id: dv-verification-methodology-recommended
+    title: Mention verification methodologies or testbench design (e.g. UVM, SystemVerilog TB)
+    priority: P1
+    check: skills-keywords-missing
+    params:
+      anyOf: ["uvm", "testbench", "tb", "assertion", "sva", "coverage", "functional verification", "ovm", "systemverilog testbench"]
+      match: substring
+      label: "verification methodologies (UVM/testbench)"
+    why: >-
+      Verification engineers must demonstrate familiarity with structured verification methodologies (like UVM),
+      writing testbenches, assertions (SVA), or coverage metrics.
+    source:
+      url: https://github.com/r-engineeringresumes/subreddit-wiki/blob/main/wiki/index.md
+      note: Verification-focused roles look for exposure to simulation, coverage, and testbench structures.
+
+  - id: dv-synthesis-simulation-tools-recommended
+    title: Specify logic synthesis or EDA simulation tools (e.g., Design Compiler, Xcelium, Vivado)
+    priority: P1
+    check: skills-keywords-missing
+    params:
+      anyOf: ["design compiler", "synopsys", "cadence", "xcelium", "simvision", "joules", "vivado", "vitis", "vcs", "verdi", "questasim"]
+      match: substring
+      label: "synthesis/simulation toolchains"
+    why: >-
+      Silicon development roles require familiarity with industry-standard EDA tools for design simulation,
+      power profiling (Joules), synthesis (Design Compiler), or FPGA implementation (Vivado).
+    source:
+      url: https://github.com/r-engineeringresumes/subreddit-wiki/blob/main/wiki/index.md
+      note: Demonstrating competence in Cadence, Synopsys, or Xilinx toolsuites is standard for VLSI hardware engineers.
+
+  - id: dv-projects-required
+    title: Add a Projects section to showcase hardware design or verification experience
+    priority: P0
+    check: projects-missing
+    why: >-
+      Hands-on hardware or software projects (e.g. custom accelerators, verification testbenches, FPGA beamformers)
+      are essential proof of engineering competence.
+    source:
+      url: https://github.com/r-engineeringresumes/subreddit-wiki/blob/main/wiki/index.md
+      note: Projects are a mandatory section to showcase hardware design and problem-solving capability.
+
+  - id: dv-work-experience-recommended
+    title: Emphasize previous silicon internships, co-ops, or design verification work experience
+    priority: P1
+    check: work-missing
+    why: >-
+      Relevant internships, co-ops, or professional verification roles are highly valued in the semiconductor industry.
+      Ensure you have a work experience section.
+    source:
+      url: https://github.com/r-engineeringresumes/subreddit-wiki/blob/main/wiki/index.md
+      note: Practical engineering experience is the most heavily weighted component of the resume.
+
+# Recruiter-search keywords for the findability score (D-039).
+# Source: O*NET Electrical/Electronics Engineers (17-2071.00) / tracking ledger: 9 instances
+searchKeywords:
+  - term: "SystemVerilog"
+    aliases: ["Verilog", "VHDL", "System Verilog", "digital design", "RTL"]
+  - term: "UVM"
+    aliases: ["Universal Verification Methodology", "OVM", "testbench", "testbenches", "assertions", "SVA", "functional verification", "coverage"]
+  - term: "EDA Tools"
+    aliases: ["Xcelium", "SimVision", "Joules", "Design Compiler", "Vivado", "Synopsys", "Cadence", "VCS", "Verdi", "Questa", "ModelSim"]
+  - term: "Protocols"
+    aliases: ["AXI4", "AXI5", "APB", "SPI", "I3C", "AXI", "AMBA", "AHB"]
+  - term: "synthesis"
+    aliases: ["logic synthesis", "timing closure", "static timing analysis", "STA", "DFT", "gate-count"]

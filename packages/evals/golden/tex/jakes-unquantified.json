@@ -1,0 +1,102 @@
+{
+  "basics": {
+    "name": "Avery Chen",
+    "email": "student@example.edu",
+    "profiles": [
+      {
+        "network": "LinkedIn",
+        "url": "https://linkedin.com/in/student"
+      },
+      {
+        "network": "GitHub",
+        "url": "https://github.com/student"
+      }
+    ]
+  },
+  "work": [
+    {
+      "name": "Example Company",
+      "position": "Software Engineer Intern",
+      "location": "Location",
+      "startDate": "2024-06",
+      "endDate": "2024-08",
+      "highlights": [
+        "Developed backend features using Python and Django frameworks.",
+        "Helped team members with debugging software errors and writing unit tests."
+      ]
+    }
+  ],
+  "education": [
+    {
+      "institution": "Example University",
+      "area": "Computer Science",
+      "studyType": "Bachelor of Science",
+      "startDate": "2022-08",
+      "endDate": "2026-05",
+      "coursework": []
+    }
+  ],
+  "skills": [
+    {
+      "name": "Languages",
+      "keywords": ["Python", "TypeScript", "Java", "C++"]
+    },
+    {
+      "name": "Frameworks",
+      "keywords": ["React", "Node.js", "Django"]
+    }
+  ],
+  "projects": [
+    {
+      "name": "coursescheduler",
+      "highlights": [
+        "Wrote constraint solvers and backend generation logics.",
+        "Maintained codebase quality and assisted with deploying the application."
+      ],
+      "keywords": ["Python", "TypeScript", "Git"],
+      "startDate": "2024-08",
+      "endDate": "2024-08"
+    }
+  ],
+  "awards": [],
+  "certificates": [],
+  "languages": [],
+  "meta": {
+    "sourceFormat": "tex",
+    "texSourceMap": [
+      {
+        "section": "basics",
+        "startLine": 18,
+        "endLine": 24
+      },
+      {
+        "section": "education",
+        "startLine": 25,
+        "endLine": 31
+      },
+      {
+        "section": "work",
+        "startLine": 32,
+        "endLine": 42
+      },
+      {
+        "section": "projects",
+        "startLine": 43,
+        "endLine": 52
+      },
+      {
+        "section": "skills",
+        "startLine": 53,
+        "endLine": 60
+      }
+    ],
+    "regionSignals": {
+      "hasPhoto": false,
+      "hasDateOfBirth": false,
+      "hasMaritalStatus": false,
+      "hasNationality": false,
+      "hasDeclarationLine": false,
+      "spellingVariant": "unknown"
+    }
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "basics": {
+    "name": "Jane Doe",
+    "email": "ee-student@example.edu",
+    "profiles": [
+      {
+        "network": "GitHub",
+        "url": "https://github.com/ee-student"
+      }
+    ]
+  },
+  "work": [],
+  "education": [
+    {
+      "institution": "Tech University",
+      "area": "Electrical Engineering",
+      "studyType": "B.S.",
+      "startDate": "2020-09",
+      "endDate": "2024-06",
+      "gpa": {
+        "value": 3.7,
+        "scale": 4
+      },
+      "coursework": ["Circuits", "Signals and Systems", "Embedded Systems"]
+    }
+  ],
+  "skills": [
+    {
+      "name": "General Tools",
+      "keywords": ["Python", "MS Office"]
+    }
+  ],
+  "projects": [],
+  "awards": [],
+  "certificates": [],
+  "languages": [],
+  "meta": {
+    "sourceFormat": "builder",
+    "regionSignals": {
+      "hasPhoto": false,
+      "hasDateOfBirth": false,
+      "hasMaritalStatus": false,
+      "hasNationality": false,
+      "hasDeclarationLine": false,
+      "spellingVariant": "en-US",
+      "pageCount": 1
+    }
+  }
+}

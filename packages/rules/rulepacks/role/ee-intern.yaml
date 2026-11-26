@@ -1,0 +1,72 @@
+# Role pack: Electrical Engineering Intern
+# Sourced from r/EngineeringResumes wiki standard: hardware projects, PCB/HDL tools, co-ops, FE/EIT status.
+pack: role/ee-intern
+kind: role
+name: Electrical Engineering Intern
+version: "0.1.0"
+rules:
+  - id: ee-lab-pcb-hdl-required
+    title: Mention PCB design, HDL, or electrical laboratory skills
+    priority: P0
+    check: skills-keywords-missing
+    params:
+      anyOf: ["altium", "eagle", "orcad", "kicad", "pcb", "fpga", "verilog", "vhdl", "spice", "ltspice", "oscilloscope", "soldering", "multimeter", "microcontroller", "arduino", "raspberry pi"]
+      match: substring
+      label: "PCB design, HDL, or lab tools"
+    why: >-
+      Electrical engineering candidates must demonstrate tool proficiency in PCB design (Altium, KiCad),
+      HDLs (Verilog, VHDL), circuit simulation (SPICE), or laboratory test equipment (oscilloscopes).
+    source:
+      url: https://github.com/r-engineeringresumes/subreddit-wiki/blob/main/wiki/skills.md
+      note: Electrical engineers must list specific lab equipment and software toolchains.
+
+  - id: ee-fe-eit-recommended
+    title: List FE Exam or EIT status (US engineering roles)
+    priority: P2
+    check: certifications-missing
+    params:
+      orSkillKeywords: ["fe", "eit", "fundamentals of engineering", "engineer-in-training"]
+    why: >-
+      Passing the Fundamentals of Engineering (FE) exam is highly valued for US electrical engineering candidates
+      aiming for power systems, MEP, or utility engineering careers.
+    source:
+      url: https://github.com/r-engineeringresumes/subreddit-wiki/blob/main/wiki/index.md
+      note: FE/EIT status is standard professional registration preparation for US engineering positions.
+
+  - id: ee-projects-required
+    title: Add a Projects section to showcase engineering design experience
+    priority: P0
+    check: projects-missing
+    why: >-
+      Hands-on hardware or software projects (e.g. PCB layouts, microcontrollers, tapeouts) are
+      critical proof of engineering competence for students.
+    source:
+      url: https://github.com/r-engineeringresumes/subreddit-wiki/blob/main/wiki/index.md
+      note: Projects are a mandatory section to showcase engineering and problem-solving capability.
+
+  - id: ee-work-experience-recommended
+    title: Emphasize previous co-ops, internships, or engineering work experience
+    priority: P1
+    check: work-missing
+    why: >-
+      Relevant co-ops, internships, or technical work experience are highly valued by electrical engineering recruiters.
+      Ensure you have a work experience section.
+    source:
+      url: https://github.com/r-engineeringresumes/subreddit-wiki/blob/main/wiki/index.md
+      note: Practical engineering experience is the most heavily weighted component of the resume.
+
+# Recruiter-search keywords for the findability score (D-039).
+# Source: O*NET Electrical Engineers (17-2071.00) / tracking ledger: 8 instances
+searchKeywords:
+  - term: "PCB design"
+    aliases: ["Altium", "Eagle", "KiCad", "schematic capture", "printed circuit board", "layout"]
+  - term: "Verilog"
+    aliases: ["VHDL", "SystemVerilog", "FPGA", "RTL", "digital design"]
+  - term: "MATLAB"
+    aliases: ["Simulink"]
+  - term: "lab equipment"
+    aliases: ["oscilloscope", "multimeter", "logic analyzer", "soldering", "spectrum analyzer"]
+  - term: "microcontrollers"
+    aliases: ["Arduino", "STM32", "ESP32", "microcontroller", "embedded C", "firmware", "PIC"]
+  - term: "SPICE"
+    aliases: ["LTspice", "HSpice", "circuit simulation", "PSpice"]

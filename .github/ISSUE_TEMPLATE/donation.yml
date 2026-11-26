@@ -1,0 +1,31 @@
+name: Resume donation
+description: Donate an ANONYMIZED resume to the golden test set (use the in-app donation flow)
+labels: [donation]
+body:
+  - type: checkboxes
+    id: consent
+    attributes:
+      label: Consent & anonymization
+      options:
+        - label: I used the in-app anonymizer and reviewed the JSON — it contains no real personal data
+          required: true
+        - label: I license this fixture under the repo's MIT license
+          required: true
+  - type: input
+    id: context
+    attributes:
+      label: Context you were applying under
+      placeholder: "india / swe-intern / student"
+    validations:
+      required: true
+  - type: textarea
+    id: resume
+    attributes:
+      label: Anonymized ResumeDoc JSON
+      render: json
+    validations:
+      required: true
+  - type: textarea
+    id: notes
+    attributes:
+      label: What should the report have caught (or not flagged)?

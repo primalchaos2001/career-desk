@@ -1,0 +1,398 @@
+# Golden expectations for the deterministic layers (rule packs).
+# Each case: a golden resume × a context (pack set) → the exact set of rule
+# findings expected. The runner fails CI on any difference
+# (docs/ARCHITECTURE.md §10). LLM-layer expectations arrive in Phase 1 and
+# will be scored by overlap, not exactness.
+#
+contexts:
+  us:
+    - stage/student
+    - role/swe-intern
+    - region/us
+  india:
+    - stage/student
+    - role/swe-intern
+    - region/india
+  uk:
+    - stage/student
+    - role/swe-intern
+    - region/uk
+  de:
+    - stage/student
+    - role/swe-intern
+    - region/de
+  us-data:
+    - stage/student
+    - role/data-analyst
+    - region/us
+  us-finance:
+    - stage/student
+    - role/finance-analyst
+    - region/us
+  us-ib:
+    - stage/student
+    - industry/finance
+    - role/ib-analyst
+    - region/us
+  us-mech:
+    - stage/student
+    - role/mech-engineer-intern
+    - region/us
+  us-ee:
+    - stage/student
+    - role/ee-intern
+    - region/us
+  us-consulting:
+    - stage/student
+    - industry/consulting
+    - role/consulting-analyst
+    - region/us
+  de-data:
+    - stage/student
+    - role/data-analyst
+    - region/de
+  india-ib:
+    - stage/student
+    - industry/finance
+    - role/ib-analyst
+    - region/india
+  uk-consulting:
+    - stage/student
+    - industry/consulting
+    - role/consulting-analyst
+    - region/uk
+  de-ee:
+    - stage/student
+    - role/ee-intern
+    - region/de
+  us-pm:
+    - stage/student
+    - role/product-manager
+    - region/us
+  de-vlsi:
+    - stage/student
+    - role/dv-engineer
+    - region/de
+  us-mba:
+    - stage/student
+    - role/mba-applicant
+    - region/us
+
+cases:
+  - resume: us-clean-swe
+    context: us
+    expected: []
+  - resume: us-clean-swe
+    context: india
+    expected: []
+
+  - resume: india-style-applied-to-us
+    context: us
+    expected:
+      [us-no-photo, us-no-personal-details, us-one-page, us-spelling, us-no-declaration]
+  - resume: india-style-applied-to-us
+    context: india
+    expected: []
+
+  - resume: india-fresher-3page
+    context: us
+    expected: [us-no-photo, us-one-page, us-spelling]
+  - resume: india-fresher-3page
+    context: india
+    expected: [in-two-pages]
+
+  - resume: no-projects-student
+    context: us
+    expected: [swe-projects-required, swe-github-link]
+  - resume: no-projects-student
+    context: india
+    expected: [swe-projects-required, swe-github-link]
+
+  - resume: no-github-swe
+    context: us
+    expected: [swe-github-link]
+  - resume: no-github-swe
+    context: india
+    expected: [swe-github-link]
+
+  - resume: unlinked-projects
+    context: us
+    expected: [swe-project-links]
+  - resume: unlinked-projects
+    context: india
+    expected: [swe-project-links]
+
+  - resume: duty-bullets
+    context: us
+    expected: [stu-quantify]
+  - resume: duty-bullets
+    context: india
+    expected: [stu-quantify]
+
+  - resume: no-gpa
+    context: us
+    expected: [stu-gpa]
+  - resume: no-gpa
+    context: india
+    expected: [stu-gpa]
+
+  - resume: no-coursework
+    context: us
+    expected: [stu-coursework]
+  - resume: no-coursework
+    context: india
+    expected: [stu-coursework]
+
+  - resume: en-gb-in-us
+    context: us
+    expected: [us-spelling]
+  - resume: en-gb-in-us
+    context: india
+    expected: []
+
+  - resume: kitchen-sink-bad
+    context: us
+    expected:
+      [
+        us-no-photo,
+        us-no-personal-details,
+        us-one-page,
+        us-spelling,
+        us-no-declaration,
+        swe-projects-required,
+        swe-github-link,
+        stu-gpa,
+        stu-coursework,
+        stu-quantify,
+      ]
+  - resume: kitchen-sink-bad
+    context: india
+    expected:
+      [
+        in-two-pages,
+        in-spelling,
+        swe-projects-required,
+        swe-github-link,
+        stu-gpa,
+        stu-coursework,
+        stu-quantify,
+      ]
+
+  - resume: rich-newgrad-1p
+    context: us
+    expected: []
+  - resume: rich-newgrad-1p
+    context: india
+    expected: []
+
+  - resume: twocolumn-layout
+    context: us
+    expected: []
+  - resume: twocolumn-layout
+    context: india
+    expected: []
+
+  - resume: finance-target
+    context: us
+    expected: [swe-github-link, swe-project-links]
+  - resume: finance-target
+    context: india
+    expected: [swe-github-link, swe-project-links]
+
+  - resume: non-cs-major
+    context: us
+    expected: []
+  - resume: non-cs-major
+    context: india
+    expected: []
+
+  - resume: uk-style-fresher
+    context: us
+    expected: [us-spelling, us-one-page]
+  - resume: uk-style-fresher
+    context: india
+    expected: []
+
+  - resume: de-style-fresher
+    context: us
+    expected: [us-no-photo, us-no-personal-details, us-one-page, us-spelling]
+  - resume: de-style-fresher
+    context: india
+    expected: []
+
+  - resume: uk-style-fresher
+    context: uk
+    expected: []
+
+  - resume: de-style-fresher
+    context: de
+    expected: []
+
+  - resume: finance-target
+    context: us-finance
+    expected: [fa-certifications-recommended]
+
+  - resume: data-analyst-clean
+    context: us-data
+    expected: [stu-quantify]
+
+  - resume: data-analyst-bad
+    context: us-data
+    expected: [da-sql-required, da-visualization-required, stu-quantify]
+
+  - resume: finance-analyst-clean
+    context: us-finance
+    expected: []
+
+  - resume: ib-ready
+    context: us-ib
+    expected: []
+
+  - resume: ib-bad
+    context: us-ib
+    expected:
+      [
+        fin-no-photo,
+        fin-one-page,
+        stu-gpa,
+        ib-quantify-bullets,
+        ib-excel-modeling-required,
+        ib-certifications-recommended,
+      ]
+
+  - resume: uk-photo-resume
+    context: uk
+    expected: [uk-no-photo]
+
+  - resume: de-traditional-lebenslauf
+    context: de
+    expected: []
+
+  - resume: de-traditional-lebenslauf
+    context: uk
+    expected: [uk-no-photo, uk-no-personal-details]
+
+  - resume: uk-overlong
+    context: uk
+    expected: [uk-page-count]
+
+  - resume: de-overlong
+    context: de
+    expected: [de-page-count]
+
+  - resume: mech-engineer
+    context: us
+    expected: [swe-project-links]
+
+  - resume: mech-engineer
+    context: india
+    expected: [swe-project-links]
+
+  - resume: mech-engineer
+    context: us-mech
+    expected: [mech-fe-eit-recommended]
+
+  - resume: mech-engineer-clean
+    context: us-mech
+    expected: []
+
+  - resume: mech-engineer-bad
+    context: us-mech
+    expected:
+      [
+        mech-cad-fea-required,
+        mech-fe-eit-recommended,
+        mech-projects-required,
+        mech-work-experience-recommended,
+      ]
+
+  - resume: ee-intern-clean
+    context: us-ee
+    expected: []
+
+  - resume: ee-intern-bad
+    context: us-ee
+    expected:
+      [
+        ee-lab-pcb-hdl-required,
+        ee-fe-eit-recommended,
+        ee-projects-required,
+        ee-work-experience-recommended,
+      ]
+
+  - resume: consulting-clean
+    context: us-consulting
+    expected: []
+
+  - resume: consulting-bad
+    context: us-consulting
+    expected:
+      [
+        con-no-photo,
+        con-one-page,
+        stu-gpa,
+        con-quantify-bullets,
+        con-leadership-evidence,
+      ]
+
+  - resume: swe-uk-strong
+    context: uk
+    expected: []
+
+  - resume: swe-uk-weak
+    context: uk
+    expected: [stu-quantify]
+
+  - resume: data-de-strong
+    context: de-data
+    expected: []
+
+  - resume: data-de-weak
+    context: de-data
+    expected: [da-sql-required, da-visualization-required, stu-quantify]
+
+  - resume: ib-india-strong
+    context: india-ib
+    expected: []
+
+  - resume: ib-india-weak
+    context: india-ib
+    expected: [ib-quantify-bullets, ib-excel-modeling-required, ib-certifications-recommended]
+
+  - resume: consulting-us-strong
+    context: us-consulting
+    expected: []
+
+  - resume: consulting-us-weak
+    context: us-consulting
+    expected: [con-no-photo, con-one-page, con-quantify-bullets, con-leadership-evidence]
+
+  - resume: pm-us-strong
+    context: us-pm
+    expected: []
+
+  - resume: pm-us-weak
+    context: us-pm
+    expected: [pm-outcome-metrics, pm-user-evidence, pm-cross-functional-scope]
+
+  - resume: vlsi-de-strong
+    context: de-vlsi
+    expected: []
+
+  - resume: vlsi-de-weak
+    context: de-vlsi
+    expected: [dv-synthesis-simulation-tools-recommended, dv-verification-methodology-recommended, stu-quantify]
+
+  - resume: mba-strong
+    context: us-mba
+    expected: []
+
+  - resume: mba-weak
+    context: us-mba
+    expected: [mba-quantify-business-impact, mba-leadership-scope-required, mba-career-progression-recommended, mba-extracurricular-impact-recommended]
+
+  - resume: us-clean-swe
+    context: us-mba
+    expected: [mba-quantify-business-impact, mba-leadership-scope-required, mba-extracurricular-impact-recommended]
+
+

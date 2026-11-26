@@ -1,0 +1,58 @@
+# Industry pack: Consulting
+# Highly selective industry focusing on structured problem-solving, GPA, and one-page brevity.
+pack: industry/consulting
+kind: industry
+name: Consulting
+version: "0.1.0"
+rules:
+  - id: con-one-page
+    title: Limit your resume to exactly one page
+    priority: P0
+    check: page-count-exceeds
+    params:
+      max: 1
+    why: >-
+      Consulting recruiters screen resumes in under 10 seconds. Keeping your resume to exactly one
+      page is a critical test of your ability to synthesize information and prioritize your impact.
+    source:
+      url: https://strategycase.com/consulting-resume/
+      note: The absolute maximum length for student consulting candidates is one page.
+
+  - id: con-no-photo
+    title: Remove the photo — consulting resumes never include one
+    priority: P0
+    check: has-photo
+    why: >-
+      In line with professional services standards in major markets, including a photo on a consulting
+      resume is unnecessary and often leads to automatic rejection due to anti-bias screening protocols.
+    source:
+      url: https://igotanoffer.com/blogs/mckinsey-case-interview-blog/consulting-resume
+      note: US and UK consulting firms mandate resumes without photos.
+
+overrides:
+  stu-gpa:
+    priority: P1
+  us-one-page:
+    disabled: true
+  uk-page-count:
+    disabled: true
+  in-two-pages:
+    disabled: true
+  de-page-count:
+    disabled: true
+  us-no-photo:
+    disabled: true
+  uk-no-photo:
+    disabled: true
+
+# Recruiter-search keywords for the findability score (D-039).
+# Source: strategies-prep / StrategiesCase guides
+searchKeywords:
+  - term: "strategy"
+    aliases: ["strategic planning", "business development", "growth strategy"]
+  - term: "benchmarking"
+    aliases: ["competitor analysis", "best practices", "market analysis"]
+  - term: "operations"
+    aliases: ["process optimization", "supply chain", "cost reduction"]
+  - term: "data analytics"
+    aliases: ["data-driven", "metrics", "quantitative analysis"]

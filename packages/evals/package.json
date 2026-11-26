@@ -1,0 +1,29 @@
+{
+  "name": "@tailorats/evals",
+  "version": "0.0.0",
+  "private": true,
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "eval": "tsx src/run.ts",
+    "matrix": "tsx src/matrix.ts",
+    "compare-local-models": "tsx src/local-model-compare.ts",
+    "eval:enrichment": "tsx src/enrichment-eval.ts"
+  },
+  "devDependencies": {
+    "@types/js-yaml": "^4.0.9",
+    "@types/node": "^26.1.0",
+    "typescript": "^5.8.0"
+  },
+  "dependencies": {
+    "@huggingface/transformers": "^4.2.0",
+    "@tailorats/core": "workspace:*",
+    "@tailorats/llm": "workspace:*",
+    "@tailorats/pipeline": "workspace:*",
+    "@tailorats/rules": "workspace:*",
+    "js-yaml": "^4.1.0",
+    "tsx": "^4.19.0",
+    "zod": "^4.4.3"
+  }
+}

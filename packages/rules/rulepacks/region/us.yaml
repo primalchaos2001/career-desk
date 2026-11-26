@@ -1,0 +1,66 @@
+# Region pack: United States
+# Sources gathered in docs/RESEARCH.md §4.
+pack: region/us
+kind: region
+name: United States
+version: "0.1.0"
+rules:
+  - id: us-no-photo
+    title: Remove the photo — US resumes never include one
+    priority: P0
+    check: has-photo
+    why: >-
+      US employers routinely discard resumes with photos to avoid
+      discrimination-liability; a photo hurts you even when it's good.
+    source:
+      url: https://resume.io/blog/international-resume-cv-writing
+      note: US section — photos discouraged for bias/legal reasons
+    suggestion:
+      before: Photo in header
+      after: No photo; use the space for a project or skills line
+
+  - id: us-no-personal-details
+    title: Remove date of birth / marital status / nationality
+    priority: P0
+    check: has-personal-details
+    why: >-
+      Protected personal information is never disclosed on US resumes;
+      recruiters are trained to treat it as a red flag.
+    source:
+      url: https://elevate.iit.edu/resources/how-do-resumes-differ-from-country-to-country/
+      note: US candidates do not disclose protected personal information
+
+  - id: us-one-page
+    title: Cut to one page for early-career US applications
+    priority: P1
+    check: page-count-exceeds
+    params: { max: 1 }
+    why: >-
+      US recruiters expect new-grad/intern resumes on a single page; extra
+      pages dilute your strongest material in the 6-second skim.
+    source:
+      url: https://www.topcv.io/blog/resume-vs-cv-differences-by-country-2026
+      note: US resumes 1–2 pages; 1 page standard for early career
+
+  - id: us-spelling
+    title: Use American English spelling throughout
+    priority: P2
+    check: spelling-variant-mismatch
+    params: { expected: en-US }
+    why: >-
+      Mixed or British spellings (optimise, colour) read as unlocalized to US
+      reviewers and keyword searches use American variants.
+    source:
+      url: https://resume.io/blog/international-resume-cv-writing
+      note: match spelling conventions to the target country
+
+  - id: us-no-declaration
+    title: Remove the declaration line
+    priority: P2
+    check: has-declaration-line
+    why: >-
+      "I hereby declare the above is true..." is an Indian/South-Asian
+      convention; on a US resume it reads as boilerplate and wastes a line.
+    source:
+      url: https://www.careeraddict.com/resume-differences-country-to-country
+      note: declaration lines are a regional convention, not used in US resumes

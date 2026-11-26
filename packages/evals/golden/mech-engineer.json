@@ -1,0 +1,66 @@
+{
+  "basics": {
+    "name": "Alex Carter",
+    "email": "student@example.edu",
+    "profiles": [
+      {
+        "network": "GitHub",
+        "url": "https://github.com/student"
+      }
+    ]
+  },
+  "work": [
+    {
+      "name": "Aerospace Corp",
+      "position": "Co-op Engineer",
+      "startDate": "2023-09",
+      "endDate": "2023-12",
+      "highlights": [
+        "Designed 3 mechanical brackets using SolidWorks",
+        "Reduced assembly part count by 15% to save weight"
+      ]
+    }
+  ],
+  "education": [
+    {
+      "institution": "Engineering State",
+      "area": "Mechanical Engineering",
+      "studyType": "B.S.",
+      "startDate": "2021-08",
+      "endDate": "2025-05",
+      "gpa": {
+        "value": 3.5,
+        "scale": 4
+      },
+      "coursework": ["CAD", "Thermodynamics", "Materials Science"]
+    }
+  ],
+  "skills": [
+    {
+      "name": "Software & Tools",
+      "keywords": ["SolidWorks", "ANSYS", "Matlab", "Python"]
+    }
+  ],
+  "projects": [
+    {
+      "name": "test-rig",
+      "description": "Constructed custom testing rig",
+      "highlights": ["Constructed 1 custom test rig for structural stress testing"]
+    }
+  ],
+  "awards": [],
+  "certificates": [],
+  "languages": [],
+  "meta": {
+    "sourceFormat": "builder",
+    "regionSignals": {
+      "hasPhoto": false,
+      "hasDateOfBirth": false,
+      "hasMaritalStatus": false,
+      "hasNationality": false,
+      "hasDeclarationLine": false,
+      "spellingVariant": "en-US",
+      "pageCount": 1
+    }
+  }
+}

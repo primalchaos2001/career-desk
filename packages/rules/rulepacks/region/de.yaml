@@ -1,0 +1,47 @@
+# Region pack: Germany
+# Sources gathered in docs/RESEARCH.md §4.
+# Photos and personal details (like DOB and nationality) are culturally
+# accepted and often expected in Germany, so this pack does not forbid them.
+pack: region/de
+kind: region
+name: Germany
+version: "0.1.0"
+rules:
+  - id: de-page-count
+    title: Keep it under two pages
+    priority: P1
+    check: page-count-exceeds
+    params: { max: 2 }
+    why: >-
+      Standard German CVs (Lebenslauf) should not exceed two pages for early-career
+      candidates to remain concise and readable.
+    source:
+      url: https://www.topcv.io/blog/resume-vs-cv-differences-by-country-2026
+      note: Germany section — standard early career CV length is up to 2 pages
+
+  - id: de-spelling
+    title: Use British English spelling for English CVs in Germany
+    priority: P2
+    check: spelling-variant-mismatch
+    params: { expected: en-GB }
+    why: >-
+      English-language CVs in Germany and Europe typically follow British English spelling
+      conventions (e.g., "optimise", "colour").
+    source:
+      url: https://resume.io/blog/international-resume-cv-writing
+      note: English CVs in Europe typically follow British English spelling conventions
+
+  - id: de-no-declaration
+    title: Remove the declaration line
+    priority: P2
+    check: has-declaration-line
+    why: >-
+      Declaration lines are a regional South Asian convention; in Germany they are not used
+      and waste valuable space.
+    source:
+      url: https://www.careeraddict.com/resume-differences-country-to-country
+      note: declaration lines are not used in German CVs
+overrides:
+  # US professional-registration advice; not applicable outside the US (D-044)
+  ee-fe-eit-recommended:
+    disabled: true

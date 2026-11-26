@@ -1,0 +1,70 @@
+# Role pack: Investment Banking Analyst
+# Elite role expecting quantified deal metrics, modeling skills, and credentials.
+pack: role/ib-analyst
+kind: role
+name: Investment Banking Analyst
+version: "0.1.0"
+rules:
+  - id: ib-quantify-bullets
+    title: Quantify a higher percentage of your experience and project bullets
+    priority: P0
+    check: unquantified-highlights
+    params:
+      minRatio: 0.3
+    why: >-
+      Investment banking recruiters expect a very high density of numbers in resume bullets
+      (specifically transaction sizes in dollars, growth rates, and margins). At least 70% of
+      your highlights should contain numbers.
+    source:
+      url: https://mergersandinquisitions.com/free-investment-banking-resume-template/
+      note: IB bullets must be highly quantified with transaction values and metrics.
+
+  - id: ib-excel-modeling-required
+    title: Highlight Excel and financial modeling skills
+    priority: P0
+    check: skills-keywords-missing
+    params:
+      anyOf: ["excel", "modeling", "valuation", "dcf", "lbo", "m&a"]
+      match: substring
+      label: "Excel or financial modeling"
+    why: >-
+      Excel and financial modeling (DCF, LBO, M&A) are core technical competencies for
+      investment banking analyst recruits. Listing them explicitly is necessary to pass screens.
+    source:
+      url: https://www.wallstreetoasis.com/resources/templates/word-templates/investment-banking-resume-template
+      note: Advanced Excel and modeling proficiency is a baseline requirement.
+
+  - id: ib-certifications-recommended
+    title: Mention relevant finance certifications (e.g., CFA, Bloomberg)
+    priority: P2
+    check: certifications-missing
+    params:
+      orSkillKeywords: ["cfa", "bloomberg", "cfi", "fmpa", "nism", "ncfm"]
+    why: >-
+      Finance-specific certifications like the CFA Level I candidate status or Bloomberg Market Concepts (BMC)
+      show commitment to financial markets and enhance early-career credibility.
+    source:
+      url: https://corporatefinanceinstitute.com/resources/career/investment-banking-resume/
+      note: Financial certifications validate analytical skills and industry interest.
+
+overrides:
+  stu-quantify:
+    disabled: true
+
+# Recruiter-search keywords for the findability score (D-039).
+# Source: Mergers & Inquisitions IB Resume Guide / tracking ledger: 12 instances
+searchKeywords:
+  - term: "financial modeling"
+    aliases: ["dcf", "lbo", "valuation", "financial analysis"]
+  - term: "Excel"
+    aliases: ["spreadsheets", "financial modeling", "vlookup"]
+  - term: "M&A"
+    aliases: ["mergers and acquisitions", "buy-side", "sell-side", "transactions"]
+  - term: "due diligence"
+    aliases: ["transaction services", "deal review"]
+  - term: "PowerPoint"
+    aliases: ["deck", "pitch book", "presentation"]
+  - term: "accounting"
+    aliases: ["financial statements", "balance sheet", "cash flow"]
+  - term: "CFA"
+    aliases: ["chartered financial analyst"]

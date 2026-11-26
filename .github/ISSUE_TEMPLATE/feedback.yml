@@ -1,0 +1,22 @@
+name: Finding feedback
+description: Agree/disagree with findings the app gave you (the app pre-fills this)
+labels: [feedback]
+body:
+  - type: input
+    id: context
+    attributes:
+      label: Context
+      description: region / role / stage / app version (pre-filled by the app)
+      placeholder: "us / swe-intern / student / v0.1.0"
+    validations:
+      required: true
+  - type: textarea
+    id: verdicts
+    attributes:
+      label: Verdicts
+      description: One line per finding — rule id, 👍/👎/not-applicable, optional reason. Never paste resume content.
+      placeholder: |
+        us-one-page 👎 — my university career center requires 2 pages for co-op applications
+        stu-quantify 👍
+    validations:
+      required: true

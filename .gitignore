@@ -1,0 +1,45 @@
+__pycache__/
+*.pyc
+.venv/
+venv/
+.env
+.cache/
+node_modules/
+.next/
+dist/
+*.pdf
+!tests/fixtures/**/*.pdf
+!packages/*/test/fixtures/**/*.pdf
+.pytest_cache/
+.ruff_cache/
+node_modules/
+.pnpm-store/
+dist/
+.next/
+coverage/
+*.tsbuildinfo
+
+# Local, private résumé samples for manual testing (contain personal data;
+# repo is public). Never committed. See docs next-session prompt.
+samples/
+
+# local-model-compare.ts's persisted run results (O-18) — a local scratch
+# artifact for an interactive comparison session, not a committed fixture.
+packages/evals/.local-model-compare-results.json
+
+# Local agent-generated optimization plan
+/CHATGPT_OPTMIZATIONS.md
+
+# Claude Code local tooling config (permissions etc.) — machine-specific, never shared
+.claude/settings.json
+
+# Browser verification artifacts and local Site runtime state
+packages/app/test-results/
+packages/app/playwright-report/
+.sites-runtime/
+.sites-checkout/
+dist-mcp/
+dist-local/
+
+# Windows download assembled by scripts/package-windows.mjs
+release/

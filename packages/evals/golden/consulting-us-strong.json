@@ -1,0 +1,70 @@
+{
+  "basics": {
+    "name": "Sarah Jenkins",
+    "email": "sarah@example.com",
+    "profiles": []
+  },
+  "work": [
+    {
+      "name": "Consulting Group",
+      "position": "Summer Analyst",
+      "startDate": "2025-06",
+      "endDate": "2025-08",
+      "highlights": [
+        "Led a team of 4 interns to analyze pricing strategies, identifying $1.2M in annual cost savings",
+        "Streamlined inventory audit workflows, cutting data capture cycle times by 35%",
+        "Co-authored 3 client presentations delivered directly to Fortune 500 executives"
+      ]
+    }
+  ],
+  "education": [
+    {
+      "institution": "Yale University",
+      "area": "Economics",
+      "studyType": "B.A.",
+      "startDate": "2022-09",
+      "endDate": "2026-05",
+      "gpa": {
+        "value": 3.9,
+        "scale": 4
+      },
+      "coursework": ["Microeconomics", "Econometrics"]
+    }
+  ],
+  "skills": [
+    {
+      "name": "General",
+      "keywords": ["Excel", "PowerPoint", "Stata", "Python"]
+    }
+  ],
+  "projects": [
+    {
+      "name": "Student Advisory Group",
+      "description": "Non-profit consulting group for local businesses",
+      "highlights": [
+        "Directed 5 consulting projects for local businesses, raising average client revenue by 18%",
+        "Spearheaded recruitment campaign, selecting 15 analysts from 120+ student applicants"
+      ]
+    }
+  ],
+  "awards": [
+    {
+      "title": "Outstanding Leadership Award",
+      "awarder": "Yale University"
+    }
+  ],
+  "certificates": [],
+  "languages": [],
+  "meta": {
+    "sourceFormat": "builder",
+    "regionSignals": {
+      "hasPhoto": false,
+      "hasDateOfBirth": false,
+      "hasMaritalStatus": false,
+      "hasNationality": false,
+      "hasDeclarationLine": false,
+      "spellingVariant": "en-US",
+      "pageCount": 1
+    }
+  }
+}

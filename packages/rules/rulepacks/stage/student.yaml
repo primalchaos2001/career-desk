@@ -1,0 +1,52 @@
+# Stage pack: current student / fresh graduate
+pack: stage/student
+kind: stage
+name: Student / New Graduate
+version: "0.1.0"
+rules:
+  - id: stu-gpa
+    title: Consider adding your GPA (if 3.0+/4.0 or equivalent)
+    priority: P2
+    check: gpa-missing
+    why: >-
+      Early-career screeners often filter on GPA; omitting it when it's decent
+      makes you look like you're hiding it. Skip only if it's genuinely low.
+    source:
+      url: https://www.jobscan.co/blog/jobscan-vs-resume-worded/
+      note: education-level and GPA checks are standard early-career screens
+
+  - id: stu-coursework
+    title: List relevant coursework under education
+    priority: P2
+    check: coursework-missing
+    why: >-
+      For students, coursework is searchable keyword surface and evidence of
+      exposure recruiters can't get from an empty work history.
+    source:
+      url: https://elevate.iit.edu/resources/how-do-resumes-differ-from-country-to-country/
+      note: early-career resumes lean on education detail
+
+  - id: stu-quantify
+    title: Quantify your bullet points
+    layer: impact
+    priority: P1
+    check: unquantified-highlights
+    params: { minRatio: 0.7 }
+    why: >-
+      Bullets without numbers state duties, not outcomes. "Reduced p95 latency
+      40%" survives the 6-second skim; "worked on backend" does not.
+    source:
+      url: https://thetechresume.com/samples/ats-myths-busted
+      note: human skim, not ATS auto-rejection, is what kills weak bullets
+
+  - id: stu-certificates-unlinked
+    title: Link each certification to its verification URL
+    priority: P2
+    check: certificates-unlinked
+    why: >-
+      Unlinked certifications are harder for recruiters to verify. Adding a verification
+      link (e.g. from Google, Microsoft, Coursera, Udemy, Bloomberg, or Credly) provides immediate
+      proof of your credential.
+    source:
+      url: https://www.topcv.io/blog/how-to-list-certifications-on-a-resume
+      note: List the name of the certification, the authority, date, and a link to verify it.

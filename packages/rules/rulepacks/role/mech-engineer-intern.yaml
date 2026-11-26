@@ -1,0 +1,72 @@
+# Role pack: Mechanical Engineering Intern
+# Sourced from r/EngineeringResumes wiki standard: design projects, CAD/FEA tools, co-ops, FE/EIT status.
+pack: role/mech-engineer-intern
+kind: role
+name: Mechanical Engineering Intern
+version: "0.1.0"
+rules:
+  - id: mech-cad-fea-required
+    title: Mention CAD, FEA, or mechanical engineering design tools
+    priority: P0
+    check: skills-keywords-missing
+    params:
+      anyOf: ["solidworks", "autocad", "inventor", "creo", "catia", "fusion 360", "ansys", "abaqus", "nastran", "fea", "fem", "matlab", "labview"]
+      match: substring
+      label: "CAD, FEA, or engineering toolchain"
+    why: >-
+      Mechanical engineering internships expect familiarity with standard design and simulation tools.
+      Listing CAD/FEA software is critical to pass core technical screens.
+    source:
+      url: https://github.com/r-engineeringresumes/subreddit-wiki/blob/main/wiki/skills.md
+      note: Mechanical engineering resumes must list core software tools like CAD/FEA.
+
+  - id: mech-fe-eit-recommended
+    title: List FE Exam or EIT status (US engineering roles)
+    priority: P2
+    check: certifications-missing
+    params:
+      orSkillKeywords: ["fe", "eit", "fundamentals of engineering", "engineer-in-training"]
+    why: >-
+      Passing the Fundamentals of Engineering (FE) exam to earn EIT status is a standard professional milestone
+      for mechanical engineers in the US, showing intent to pursue PE licensing.
+    source:
+      url: https://github.com/r-engineeringresumes/subreddit-wiki/blob/main/wiki/index.md
+      note: FE exam or EIT certification is highly valued for US entry-level engineering roles.
+
+  - id: mech-projects-required
+    title: Add a Projects section to showcase engineering design experience
+    priority: P0
+    check: projects-missing
+    why: >-
+      Engineering candidates must show hand-on design, analysis, and fabrication experience.
+      A structured projects section is a mandatory component.
+    source:
+      url: https://github.com/r-engineeringresumes/subreddit-wiki/blob/main/wiki/index.md
+      note: Academic or personal engineering projects are essential to demonstrate hands-on competence.
+
+  - id: mech-work-experience-recommended
+    title: Emphasize previous co-ops, internships, or engineering work experience
+    priority: P1
+    check: work-missing
+    why: >-
+      Co-op and internship experiences are the single most heavily weighted factor in hiring new graduates.
+      Ensure you have a work experience section listing your engineering experience.
+    source:
+      url: https://github.com/r-engineeringresumes/subreddit-wiki/blob/main/wiki/index.md
+      note: Work experience in engineering, co-ops, or internships is preferred above all else.
+
+# Recruiter-search keywords for the findability score (D-039).
+# Source: O*NET Mechanical Engineers (17-2141.00) / tracking ledger: 9 instances
+searchKeywords:
+  - term: "CAD"
+    aliases: ["SolidWorks", "AutoCAD", "Inventor", "Creo", "CATIA", "Fusion 360", "computer-aided design"]
+  - term: "FEA"
+    aliases: ["ANSYS", "Abaqus", "Nastran", "finite element analysis", "stress analysis", "simulation"]
+  - term: "prototyping"
+    aliases: ["3D printing", "machining", "fabrication", "workshop", "rapid prototyping"]
+  - term: "GD&T"
+    aliases: ["geometric dimensioning and tolerancing", "engineering drawings", "tolerancing"]
+  - term: "thermodynamics"
+    aliases: ["heat transfer", "fluid mechanics", "thermal analysis"]
+  - term: "MATLAB"
+    aliases: ["simulation", "numerical analysis", "LabVIEW"]

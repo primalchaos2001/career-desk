@@ -1,0 +1,82 @@
+%-----------------------------------------------------------------------------
+% Fixture (A-14): non-Jake's layout — a custom \resumeSubheading (title-first,
+% date second), plain itemize bullets (not \resumeItem), tabular skills, and
+% \textbf-heading + itemize projects under a "Selected Engineering Projects"
+% heading. Anonymized structural twin of samples/resume.tex (gitignored). B-3.
+%-----------------------------------------------------------------------------
+\documentclass[10pt,letterpaper]{article}
+\usepackage[margin=0.6in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fontawesome5}
+\usepackage{tabularx}
+
+\newcommand{\resumeSubheading}[4]{
+\begin{tabularx}{\textwidth}{Xr}
+\textbf{#1} & #2\\
+\textit{#3} & \textit{#4}
+\end{tabularx}
+}
+
+\begin{document}
+
+\begin{center}
+{\LARGE \textbf{Jordan Rivera}}\\[4pt]
+{\large Design \& Verification Engineer}\\[6pt]
+\faPhone\ +1-555-0100 \quad
+\faEnvelope\ \href{mailto:jordan@example.com}{jordan@example.com}\\
+\faLinkedin\ https://linkedin.com/in/jordanrivera \quad
+\faGithub\ https://github.com/<your-github>
+\end{center}
+
+\section*{Professional Experience}
+
+\resumeSubheading
+{Design \& Verification Engineer}{Jul 2025 -- Present}
+{Acme Silicon}{Bengaluru, India}
+
+\begin{itemize}[leftmargin=*]
+\item Designed SystemVerilog RTL modules for AI accelerator architectures.
+\item Optimized RTL for area and power, achieving up to a 5$\times$ gate-count reduction.
+\item Developed UVM verification environments and automated regression with Python.
+\end{itemize}
+
+\section*{Technical Skills}
+
+\begin{tabular}{p{1.6in}p{4.8in}}
+Languages & SystemVerilog, Verilog, VHDL, Python, C++\\
+Protocols & AXI4, AXI5, APB, SPI, I3C\\
+Verification & UVM, SystemVerilog Testbenches, Assertions\\
+\end{tabular}
+
+\section*{Selected Engineering Projects}
+
+\textbf{FPGA Ultrasound Beamforming}
+
+\begin{itemize}[leftmargin=*]
+\item Implemented a Delay-and-Sum beamforming accelerator in VHDL.
+\item Integrated AXI DMA on a Zynq UltraScale+ platform.
+\end{itemize}
+
+\textbf{Race Prediction Engine}
+
+\begin{itemize}[leftmargin=*]
+\item Built an ensemble machine-learning pipeline for race-outcome prediction.
+\end{itemize}
+
+\section*{Education}
+
+\resumeSubheading
+{State University}{2023--2025}
+{M.Tech., Electronics Engineering \hfill CGPA: 8.73/10}{}
+
+\resumeSubheading
+{City Institute of Technology}{2019--2023}
+{B.Tech., Electronics Engineering \hfill CGPA: 8.75/10}{}
+
+\section*{Leadership}
+
+\begin{itemize}[leftmargin=*]
+\item Student Legislator, Student Council, State University.
+\end{itemize}
+
+\end{document}
