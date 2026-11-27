@@ -1,4 +1,5 @@
 import { spawn } from "node:child_process";
+import { createHash } from "node:crypto";
 import { existsSync, readFileSync, statSync } from "node:fs";
 import { createServer, type IncomingMessage, type ServerResponse } from "node:http";
 import { dirname, extname, join, resolve, sep } from "node:path";
@@ -53,11 +54,33 @@ export async function main() {
     process.exit(1);
   }
 
-  // Already running? Just open it.
-  if (await alreadyRunning(port)) {
-    console.log(`Career Desk is already running. Opening ${url}`);
-    if (!process.argv.includes("--no-open")) openBrowser(url);
-    return;
+  // Fingerprint of this build (app files plus this server), so an older copy
+  // still running on the port isn't mistaken for this one.
+  const build = createHash("sha256")
+    .update(readFileSync(join(staticDir, "index.html")))
+    .update(readFileSync(fileURLToPath(import.meta.url)))
+    .digest("hex")
+    .slice(0, 12);
+
+  // Already running? Reuse it only if it is this build on this folder.
+  const running = await runningLauncher(port);
+  if (running) {
+    const reason = reuseProblem(running, { build, dir });
+    if (!reason) {
+      console.log(`Career Desk is already running. Opening ${url}`);
+      if (!process.argv.includes("--no-open")) openBrowser(url);
+      return;
+    }
+    console.error(
+      [
+        "",
+        `  Another Career Desk is already running on port ${port}, but ${reason}.`,
+        '  Close its window (the black "Career Desk" window) and start Career Desk again.',
+        `  Or start this one on another port: --port ${port + 1}`,
+        "",
+      ].join("\n"),
+    );
+    process.exit(1);
   }
 
   const route = createFolderApi({
@@ -65,6 +88,7 @@ export async function main() {
     getValidate: () => async () => validateWorkspace,
     mcpBundle,
     serverKind: "launcher",
+    build,
     launcherCmd: join(appRoot, "..", "..", "Career Desk.cmd"),
   });
 
@@ -93,6 +117,7 @@ export async function main() {
         "  Career Desk is running.",
         `  Open:      ${url}`,
         `  Workspace: ${dir}`,
+        `  Build:     ${build}`,
         "",
         "  Keep this window open while you use Career Desk. Close it to stop.",
         "",
@@ -139,16 +164,30 @@ function serveStatic(root: string, req: IncomingMessage, res: ServerResponse) {
   res.end(req.method === "HEAD" ? undefined : readFileSync(file));
 }
 
-async function alreadyRunning(port: number) {
+type RunningLauncher = { build?: unknown; folder?: unknown };
+
+async function runningLauncher(port: number): Promise<RunningLauncher | undefined> {
   try {
     const res = await fetch(`http://127.0.0.1:${port}/__career-desk/status`, {
       signal: AbortSignal.timeout(1500),
     });
     const body = await res.json();
-    return body?.server === "launcher";
+    return body?.server === "launcher" ? body : undefined;
   } catch {
-    return false;
+    return undefined;
   }
+}
+
+/** Why a running launcher can't be reused, or "" when it can. */
+export function reuseProblem(running: RunningLauncher, want: { build: string; dir: string }) {
+  if (running.build !== want.build) return "it is a different version of Career Desk";
+  const norm = (p: string) => {
+    const r = resolve(p);
+    return process.platform === "win32" ? r.toLowerCase() : r;
+  };
+  if (typeof running.folder !== "string" || norm(running.folder) !== norm(want.dir))
+    return `it uses another workspace folder (${String(running.folder)})`;
+  return "";
 }
 
 function openBrowser(url: string) {

@@ -115,6 +115,38 @@ export function boardQueries(c: Campaign, opts: Omit<BoardSearch, "campaignId"> 
   }));
 }
 
+type Opening = { city: string; direct: string; reqId: string };
+
+function openingOf(p: BoardPosting): Opening {
+  let direct = "";
+  try {
+    direct = p.job_url_direct ? canonicalUrl(p.job_url_direct) : "";
+  } catch {
+    direct = "";
+  }
+  return {
+    city: (p.location ?? "").split(",")[0]?.trim().toLowerCase() ?? "",
+    direct,
+    reqId: requisitionId(p.description ?? ""),
+  };
+}
+
+/** "Job ID: R12345", "Req #4567", "Requisition ID - JR-889" and similar. */
+export function requisitionId(text: string): string {
+  const m = text.match(
+    /\b(?:job|req(?:uisition)?|posting)\s*(?:id|no\.?|number|#)?\s*[:#-]?\s*([A-Z]{0,4}-?\d[\w-]{2,})/i,
+  );
+  return m?.[1]?.toUpperCase() ?? "";
+}
+
+/** Two postings are one opening unless something known about them differs. */
+function sameOpening(a: Opening, b: Opening): boolean {
+  if (a.city && b.city && a.city !== b.city) return false;
+  if (a.direct && b.direct && a.direct !== b.direct) return false;
+  if (a.reqId && b.reqId && a.reqId !== b.reqId) return false;
+  return true;
+}
+
 /** Map, de-duplicate across boards and rank postings for a campaign. */
 export function rankPostings(
   w: Workspace,
@@ -124,7 +156,8 @@ export function rankPostings(
   const c = w.campaigns.find((x) => x.id === campaignId);
   if (!c) throw new Error("Campaign not found");
   const saved = new Set(w.jobs.map((j) => canonicalUrl(j.url)));
-  const seen = new Set<string>();
+  const seenUrls = new Set<string>();
+  const kept = new Map<string, Opening[]>();
   const corpus = jobCorpus(w);
   const candidates: Candidate[] = [];
   for (const p of postings) {
@@ -134,11 +167,16 @@ export function rankPostings(
     } catch {
       continue;
     }
-    // The same opening is often listed on several boards.
-    const key = `${(p.company ?? "").toLowerCase()}|${p.title.toLowerCase()}`;
-    if (seen.has(url) || seen.has(key)) continue;
-    seen.add(url);
-    seen.add(key);
+    if (seenUrls.has(url)) continue;
+    // The same opening is often listed on several boards. Drop a posting only
+    // when nothing shows it is a different opening of the same employer and title.
+    const key = `${(p.company ?? "").trim().toLowerCase()}|${p.title.trim().toLowerCase()}`;
+    const opening = openingOf(p);
+    const group = kept.get(key) ?? [];
+    if (group.some((o) => sameOpening(o, opening))) continue;
+    group.push(opening);
+    kept.set(key, group);
+    seenUrls.add(url);
     const job = toJobInput(p, c.id);
     const match = matchJob(
       w.profile,

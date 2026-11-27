@@ -28,10 +28,14 @@ export class ConflictError extends Error {}
 
 const API = "/__career-desk";
 
-function nextVersion(next: Workspace, expectedRevision: number): Workspace {
+/**
+ * The saved copy always follows the revision it replaces. The incoming revision
+ * is ignored: an imported file may carry any number, even one ahead of disk.
+ */
+export function nextVersion(next: Workspace, expectedRevision: number): Workspace {
   return validateWorkspace({
     ...next,
-    revision: Math.max(next.revision, expectedRevision) + 1,
+    revision: expectedRevision + 1,
     updatedAt: now(),
   });
 }

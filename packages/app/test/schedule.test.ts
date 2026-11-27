@@ -14,6 +14,7 @@ import {
   needsExtension,
   scheduleState,
   startSchedule,
+  stopSchedule,
 } from "../src/lib/schedule";
 import { blankWorkspace, type Campaign, type Workspace } from "../src/lib/workspace";
 
@@ -175,5 +176,49 @@ describe("scheduler", () => {
     expect(saved.campaigns[0]?.schedule?.lastRunDay).toBe(localDay(at("2026-11-26T09:05:00")));
     expect(saved.campaigns[0]?.schedule?.lastResult).toMatch(/1 new match saved from 2 postings/);
     expect(assistant).toEqual([]); // assistant search is off unless the user turns it on
+  });
+  it("does not start the assistant if the search was turned off while it ran", async () => {
+    const dir = mkdtempSync(join(tmpdir(), "cd-sched-"));
+    const w = blankWorkspace();
+    const c = campaign(w);
+    startSchedule(c, at("2026-11-26T08:00:00"), { useAssistant: true });
+    writeFileSync(join(dir, "workspace.json"), JSON.stringify(w));
+    const turnOff = () => {
+      const latest = JSON.parse(readFileSync(join(dir, "workspace.json"), "utf8")) as Workspace;
+      const lc = latest.campaigns.find((x) => x.id === c.id);
+      if (lc) stopSchedule(lc);
+      latest.revision += 1;
+      writeFileSync(join(dir, "workspace.json"), JSON.stringify(latest));
+    };
+    const assistant: string[] = [];
+    const ran = await runDueSearches({
+      dir,
+      mcpBundle: "",
+      search: async () => {
+        turnOff();
+        return { jobs: [], errors: [] };
+      },
+      startAssistant: (id: string) => assistant.push(id),
+      clock: () => at("2026-11-26T09:05:00"),
+    });
+    expect(ran).toEqual([c.id]);
+    expect(assistant).toEqual([]);
+  });
+
+  it("starts the assistant when the user allowed it", async () => {
+    const dir = mkdtempSync(join(tmpdir(), "cd-sched-"));
+    const w = blankWorkspace();
+    const c = campaign(w);
+    startSchedule(c, at("2026-11-26T08:00:00"), { useAssistant: true });
+    writeFileSync(join(dir, "workspace.json"), JSON.stringify(w));
+    const assistant: string[] = [];
+    await runDueSearches({
+      dir,
+      mcpBundle: "",
+      search: async () => ({ jobs: [], errors: [] }),
+      startAssistant: (id: string) => assistant.push(id),
+      clock: () => at("2026-11-26T09:05:00"),
+    });
+    expect(assistant).toEqual([c.id]);
   });
 });

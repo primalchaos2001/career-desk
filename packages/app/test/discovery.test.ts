@@ -1,6 +1,13 @@
 import { describe, expect, it } from "vitest";
 import { searchBoards } from "../server/discovery/jobspy";
-import { type BoardPosting, lpaOf, searchTerms, toJobInput } from "../src/lib/boards";
+import {
+  type BoardPosting,
+  lpaOf,
+  rankPostings,
+  requisitionId,
+  searchTerms,
+  toJobInput,
+} from "../src/lib/boards";
 import { addJob, blankWorkspace, type Workspace } from "../src/lib/workspace";
 
 function workspace(): Workspace {
@@ -89,5 +96,43 @@ describe("job-board adapter", () => {
     expect(candidates.map((c) => c.job.company)).toEqual(["Chipco", "Other", "Shop"]);
     expect(candidates[0]?.match.skills.matched).toEqual(expect.arrayContaining(["UVM"]));
     expect(candidates.find((c) => c.job.company === "Other")?.alreadySaved).toBe(true);
+  });
+
+  it("keeps separate openings with the same employer and title", () => {
+    const w = workspace();
+    const asic = (over: Partial<BoardPosting>) =>
+      post({ title: "ASIC Engineer", company: "Chipco", ...over });
+    const ranked = rankPostings(w, "c1", [
+      asic({ job_url: "https://indeed.com/a", location: "Bengaluru, KA" }),
+      asic({ job_url: "https://indeed.com/b", location: "Hyderabad, TS" }),
+      // Same city, but the employer's own links differ.
+      asic({
+        job_url: "https://indeed.com/c",
+        location: "Pune",
+        job_url_direct: "https://careers.chipco.com/jobs/1",
+      }),
+      asic({
+        job_url: "https://indeed.com/d",
+        location: "Pune",
+        job_url_direct: "https://careers.chipco.com/jobs/2",
+      }),
+      // Same city, different requisition numbers.
+      asic({ job_url: "https://indeed.com/e", location: "Noida", description: "Job ID: R1001" }),
+      asic({ job_url: "https://indeed.com/f", location: "Noida", description: "Req #R1002" }),
+      // The same opening on another board: still merged.
+      asic({
+        site: "linkedin",
+        job_url: "https://linkedin.com/jobs/view/7",
+        location: "Hyderabad",
+      }),
+    ]);
+    expect(ranked.map((c) => c.job.url)).toHaveLength(6);
+    expect(ranked.map((c) => c.job.url)).not.toContain("https://linkedin.com/jobs/view/7");
+  });
+
+  it("reads requisition numbers", () => {
+    expect(requisitionId("Job ID: R12345. Apply now")).toBe("R12345");
+    expect(requisitionId("Requisition ID - JR-889")).toBe("JR-889");
+    expect(requisitionId("2+ years of job experience")).toBe("");
   });
 });

@@ -53,15 +53,19 @@ if not defined PY for /f "delims=" %%P in ('where python 2^>nul') do if not defi
 )
 if not defined PY (
   echo.
-  echo  Job-board search and CV PDFs need Python 3.10 or later, which isn't installed.
+  echo  Job-board search and CV PDFs need Python 3.12 or later, which isn't installed.
   echo  Everything else works now. To add them later: install Python from
   echo  https://www.python.org/downloads/ ^(tick "Add python.exe to PATH"^),
   echo  then close and start Career Desk again.
   echo.
   exit /b 0
 )
-%PY% -c "import sys; sys.exit(0 if sys.version_info >= (3, 10) else 1)" || (
-  echo  Python 3.10 or later is needed for job boards and CV PDFs; skipping them for now.
+%PY% -c "import sys; sys.exit(0 if sys.version_info >= (3, 12) else 1)" || (
+  echo.
+  echo  Job-board search and CV PDFs need Python 3.12 or later; the Python found is older.
+  echo  Everything else works now. Install a newer Python from https://www.python.org/downloads/
+  echo  ^(tick "Add python.exe to PATH"^), then close and start Career Desk again.
+  echo.
   exit /b 0
 )
 echo.
