@@ -28,6 +28,8 @@ export interface FolderApiOptions {
   /** Node used to run the connector (defaults to this process's Node). */
   nodePath?: string;
   serverKind: "dev" | "preview" | "launcher";
+  /** Fingerprint of the running build (launcher only). */
+  build?: string;
   /** Career Desk.cmd, for "start with Windows" (launcher only). */
   launcherCmd?: string;
 }
@@ -125,6 +127,7 @@ export function createFolderApi(opts: FolderApiOptions) {
       return send(res, 200, {
         ...connectorStatus(dir, opts.mcpBundle, opts.nodePath),
         server: opts.serverKind,
+        build: opts.build ?? null,
       });
 
     if (path === `${API}/runs` && req.method === "GET")

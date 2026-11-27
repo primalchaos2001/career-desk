@@ -1,5 +1,5 @@
 import { type BoardPosting, boardQueries, rankPostings } from "../src/lib/boards";
-import { isDue, localDay } from "../src/lib/schedule";
+import { isDue, localDay, scheduleState } from "../src/lib/schedule";
 import { addJob, event, now, validateWorkspace, type Workspace } from "../src/lib/workspace";
 import { runBoardQueries } from "./discovery/python";
 import { readState, writeIfRevision } from "./folderFile";
@@ -42,6 +42,17 @@ function change(dir: string, fn: (w: Workspace) => void): boolean {
     if ("error" in saved) throw new Error(saved.error);
   }
   return false;
+}
+
+function assistantStillWanted(dir: string, campaignId: string, at: Date): boolean {
+  try {
+    const state = readState(dir);
+    if (!("exists" in state) || !state.exists) return false;
+    const c = validateWorkspace(state.value).campaigns.find((x) => x.id === campaignId);
+    return !!c?.schedule?.useAssistant && scheduleState(c, at).kind === "active";
+  } catch {
+    return false;
+  }
 }
 
 /** Run every campaign that is due now. Returns the campaigns it ran. */
@@ -104,7 +115,9 @@ export async function runDueSearches(opts: SchedulerOptions): Promise<string[]> 
         if (s) s.lastResult = result;
       });
     }
-    if (c.schedule?.useAssistant && !currentRun(opts.dir)) {
+    // Check the campaign as it is now: the user may have turned the search or
+    // the assistant off while the job boards were being searched.
+    if (assistantStillWanted(opts.dir, c.id, clock()) && !currentRun(opts.dir)) {
       try {
         if (opts.startAssistant) opts.startAssistant(c.id);
         else

@@ -46,7 +46,7 @@ no account.
    morning at 9:00 for a week; after that it asks before continuing.
 
 Node is included in the download. Job-board search and CV PDFs also need
-[Python 3.10+](https://www.python.org/downloads/); the first start sets them up
+[Python 3.12+](https://www.python.org/downloads/); the first start sets them up
 by itself (about a minute). Without Python everything else still works.
 
 Emails are never sent for you: you write your own template (or review what
@@ -87,7 +87,7 @@ pnpm test
 pnpm dev                                       # Vite dev server, /workspace
 ```
 
-Job boards and CV PDFs need Python 3.10+ in `.venv` (or set `CAREER_DESK_PYTHON`):
+Job boards and CV PDFs need Python 3.12+ in `.venv` (or set `CAREER_DESK_PYTHON`):
 
 ```sh
 python -m venv .venv
